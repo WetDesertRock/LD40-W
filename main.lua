@@ -29,10 +29,12 @@ function love.load()
 end
 
 function love.update(dt)
-	world:executeSystem("playermovement", dt)
-	world:executeSystem("followermovement", dt)
-	world:executeSystem("collision", dt)
-	world:executeSystem("mortal", dt)
+	world:executeSystems(
+		"playermovement",
+		"followermovement",
+		"collision",
+		"mortal"
+	)(dt)
 end
 
 function love.draw()

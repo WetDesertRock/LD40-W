@@ -31,8 +31,11 @@ function World:executeSystem(system, ...)
 end
 
 function World:executeSystems(...)
-	for _, system in ipairs({...}) do
-		self:executeSystem(system)
+	local systems = {...}
+	return function(...)
+		for _, system in ipairs(systems) do
+			self:executeSystem(system, ...)
+		end
 	end
 end
 
