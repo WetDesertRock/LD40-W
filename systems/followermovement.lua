@@ -19,7 +19,7 @@ function FollowerMovement:execute(dt)
 		local npos = composition.position + ndir * composition.movement.speed * dt
 
 		if composition.collision then
-			npos.x, npos.y = collisionSystem:moveComponent(composition.entity, npos)
+			npos = collisionSystem:moveComponent(composition.entity, npos)
 		end
 
 		composition.position.x, composition.position.y = npos:unpack()

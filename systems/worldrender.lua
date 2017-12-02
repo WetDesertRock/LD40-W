@@ -1,5 +1,52 @@
 local Camera = require("lib.hump.camera")
 
+local renderers = {
+	player = function(self, entity)
+		local compo = entity:composeComponents("position")
+
+		love.graphics.setColor(20, 20, 20)
+		love.graphics.circle("fill", compo.position.x, compo.position.y, 10, 15)
+	end,
+
+	enemy = function(self, entity)
+		local compo = entity:composeComponents("position")
+
+		love.graphics.setColor(50, 20, 20)
+		love.graphics.circle("fill", compo.position.x, compo.position.y, 10, 15)
+	end,
+
+	switch = function(self, entity)
+		local compo = entity:composeComponents("position", "switch")
+
+		local size = Vector(16, 24)
+		local sx,sy = (compo.position - size / 2):unpack()
+
+		love.graphics.setColor(20, 20, 50)
+		love.graphics.rectangle("fill", sx,sy, size.x,size.y, 7)
+
+		-- Draw switch indicator
+		local offset = Vector(0, -5)
+		if compo.switch.state then
+			offset = offset * -1
+		end
+
+		local x,y = (compo.position + offset):unpack()
+		love.graphics.setColor(255, 255, 255)
+		love.graphics.circle("line", x,y, 4)
+	end,
+
+	debug = function(self, entity)
+		local compo = entity:composeComponents("position", "collision")
+
+		if compo.collision then
+			local x,y = compo.collision.position:unpack()
+
+			love.graphics.setColor(255,0,0)
+			love.graphics.rectangle("line", x,y, compo.collision.width, compo.collision.height)
+		end
+	end,
+}
+
 local WorldRender = require("system"):extend()
 
 function WorldRender:init(...)
@@ -17,17 +64,13 @@ function WorldRender:execute(dt)
 	self.camera:attach()
 
 	for uuid, data in pairs(self.components) do
-		local compo = self:composeComponents(uuid, "position", "collision")
+		local entity = self.world:getEntity(uuid)
 
-		local offX,offY = 0,0
+		-- Render the entity
+		renderers[data](self, entity)
 
-		if compo.collision then
-			offX = compo.collision.width/2
-			offY = compo.collision.height/2
-		end
-
-		love.graphics.setColor(20, 20, 20)
-		love.graphics.circle("fill", compo.position.x + offX, compo.position.y + offY, 10, 15)
+		-- Render debug info
+		renderers.debug(self, entity)
 	end
 
 	self.camera:detach()
@@ -37,16 +80,9 @@ function WorldRender:updateCamera()
 	local player = self.world:getBookmark("player")
 	if player == nil then return end
 
-	local playercomp = player:composeComponents("position", "collision")
+	local playercomp = player:composeComponents("position")
 
-	if playercomp.collision == nil then return end
-
-	local offX = playercomp.collision.width/2
-	local offY = playercomp.collision.height/2
-
-	local cx,cy = playercomp.position.x + offX, playercomp.position.y + offY
-
-	self.camera:lookAt(cx, cy)
+	self.camera:lookAt(playercomp.position:unpack())
 end
 
 return WorldRender

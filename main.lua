@@ -18,19 +18,26 @@ function love.load()
 		"followermovement",
 		"worldrender",
 		"collision",
+		"switch",
+		"input",
 		"mortal"
 	)
 
 	local ent = require("entities.player")()
 	world:addEntity(ent)
 
-	local ent = require("entities.follower")()
+	-- local ent = require("entities.follower")()
+	-- world:addEntity(ent)
+
+	local ent = require("entities.switch")()
 	world:addEntity(ent)
 end
 
 function love.update(dt)
 	world:executeSystems(
+		"input",
 		"playermovement",
+		"switch",
 		"followermovement",
 		"collision",
 		"mortal"

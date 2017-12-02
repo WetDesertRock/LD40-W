@@ -14,7 +14,8 @@ function Follower:init(...)
 	self:addComponent("collision", {
 		position = self:getComponent("position"):clone(),
 		width = 20,
-		height = 20
+		height = 20,
+		sold = true
 	})
 
 	self:addComponent("mortal", {

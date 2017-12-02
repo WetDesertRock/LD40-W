@@ -13,7 +13,8 @@ function Player:init(...)
 	self:addComponent("collision", {
 		position = self:getComponent("position"):clone(),
 		width = 20,
-		height = 20
+		height = 20,
+		sold = true
 	})
 
 	self:addComponent("mortal", {
@@ -31,7 +32,7 @@ function Player:onDeath()
 end
 
 function Player:onContact(other)
-	if other:is(require("entity")) then
+	if other:is(require("entities.follower")) then
 		local mortal = self:getComponent("mortal")
 		if mortal then mortal.alive = false end
 	end
