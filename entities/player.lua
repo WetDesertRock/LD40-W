@@ -8,7 +8,7 @@ function Player:init(...)
 		speed = 100
 	})
 	self:addComponent("playermovement", {})
-	self:addComponent("render", "player")
+	self:addComponent("worldrender", "player")
 
 	self:addComponent("collision", {
 		position = self:getComponent("position"):clone(),

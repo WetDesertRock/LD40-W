@@ -16,7 +16,7 @@ function love.load()
 		"movement",
 		"playermovement",
 		"followermovement",
-		"render",
+		"worldrender",
 		"collision",
 		"mortal"
 	)
@@ -39,5 +39,5 @@ end
 
 function love.draw()
 	love.graphics.setBackgroundColor(240, 240, 240)
-	world:executeSystem("render")
+	world:executeSystem("worldrender")
 end
