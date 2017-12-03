@@ -1,4 +1,4 @@
-local FollowerSpawner = require("coilsystem"):extend()
+local FollowerSpawner = require("timingsystem"):extend()
 
 function FollowerSpawner:init(...)
 	FollowerSpawner.super.init(self, ...)

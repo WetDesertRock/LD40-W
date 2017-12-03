@@ -29,6 +29,10 @@ local loaders = {
 		if object.tag then
 			world:tagEntity(ent, object.tag)
 		end
+	end,
+
+	wall = function(world, object)
+		local ent = world:addEntity(require("entities.wall"), object.center, object.rect)
 	end
 }
 
@@ -41,13 +45,15 @@ local function loadMap(world)
 		if layer.type == "objectgroup" then
 			for _, object in ipairs(layer.objects) do
 				-- Make convient object
-				local center = Vector(object.x, object.y) + (Vector(object.width, object.height) / 2)
+				local rect = Rect(object.x, object.y, object.width, object.height)
+				local center = Vector(rect:middle())
 				local obj = {
 					id = object.id,
 					name = object.name,
 					type = object.type,
 					center = center,
 					tag = object.properties.tag,
+					rect = rect,
 					raw = object
 				}
 				table.insert(mapObjects, obj)

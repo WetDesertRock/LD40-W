@@ -23,12 +23,27 @@ return {
 			player:addComponent("playermovement", {})
 
 			-- Enable followers
-			-- local followers = self.world:getTaggedEntities("followers")
-			-- for _,follower in ipairs(followers) do
-			-- 	follower:enableAllComponents()
-			-- end
-			local playerpos = player:getComponent("position")
-			self.world:getSystem("followerspawner"):spawn(30)
+			self.world:enableTaggedEntities("graphicsSwitch_followers")
+			self.world:getSystem("followerspawner"):spawn(20)
+		end,
+
+		disable = function(self, switch) end -- Sticky switch
+	},
+	linesSwitch = {
+		data = {
+			id = "linesSwitch",
+			title = "L",
+			sticky = false,
+			state = false
+		},
+
+		enable = function(self, switch)
+			-- Kill all followers:
+			self.world:getSystem("followerai"):killAllFollowers()
+
+			-- Enable followers
+			self.world:enableTaggedEntities("linesSwitch_enemies")
+			self.world:getSystem("followerspawner"):spawn(5)
 		end,
 
 		disable = function(self, switch) end -- Sticky switch

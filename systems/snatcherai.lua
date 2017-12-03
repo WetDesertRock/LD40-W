@@ -1,4 +1,4 @@
-local SnatcherAI = require("coilsystem"):extend()
+local SnatcherAI = require("timingsystem"):extend()
 
 function SnatcherAI:execute(dt)
 	SnatcherAI.super.execute(self, dt)
@@ -34,18 +34,18 @@ function SnatcherAI:attack(this, other)
 	local thisCompo = this:composeComponents("position", "snatcherai")
 	local otherCompo = other:composeComponents("position", "mortal")
 
-	thisCompo.snatcherai.cooldown = 0.5
+	thisCompo.snatcherai.cooldown = 0.4
 
 	-- Remove targets movement
 	other:removeComponent("followermovement")
 	other:removeComponent("playermovement")
 
-	thisCompo.position.x, thisCompo.position.y = otherCompo.position:unpack()
+	local tgtx,tgty = otherCompo.position:unpack()
+	local originx,originy = thisCompo.snatcherai.origin:unpack()
 
-	self.threads:add(function()
+	self.tweens:to(thisCompo.position, 0.1, {x = tgtx, y = tgty}):oncomplete(function()
 		otherCompo.mortal.alive = false
-		coil.wait(0.2)
-		thisCompo.position.x, thisCompo.position.y = thisCompo.snatcherai.origin:unpack()
+		self.tweens:to(thisCompo.position, 0.2, {x = originx, y = originy})
 	end)
 end
 

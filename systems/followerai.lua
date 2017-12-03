@@ -25,9 +25,17 @@ function FollowerAI:execute(dt)
 			end
 
 			data.nextCheck = 1
+			data.lastPosition = composition.position:clone()
 		else
 			data.nextCheck = data.nextCheck - dt
 		end
+	end
+end
+
+function FollowerAI:killAllFollowers()
+	for uuid, data in pairs(self.components) do
+		local composition = self:composeComponents(uuid, "mortal")
+		composition.mortal.alive = false
 	end
 end
 

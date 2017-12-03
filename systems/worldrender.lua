@@ -55,6 +55,12 @@ local renderers = {
 		love.graphics.printf(compo.switch.title, x,y, limit, "center")
 	end,
 
+	wall = function(self, entity)
+		local rect = entity:getComponent("rectangle")
+		love.graphics.setColor(0,0,0)
+		love.graphics.rectangle("fill", rect:unpack())
+	end,
+
 	debug = function(self, entity)
 		local compo = entity:composeComponents("position", "collision")
 
@@ -67,17 +73,28 @@ local renderers = {
 	end,
 }
 
-local WorldRender = require("system"):extend()
+local WorldRender = require("timingsystem"):extend()
 
 function WorldRender:init(...)
 	WorldRender.super.init(self, ...)
 	self.enabled = false
+	self.fade = 1
 
 	self.camera = Camera.new(0, 0)
 	self:updateCamera() -- Update camera if able to
 end
 
-function WorldRender:execute(dt)
+function WorldRender:enable()
+	if self.enabled then return end
+
+	self.tweens:to(self, 3, {fade=0})
+
+	WorldRender.super.enable(self)
+end
+
+
+function WorldRender:execute()
+	WorldRender.super.execute(self)
 	if not self.enabled then return end
 
 	self:updateCamera()
@@ -95,6 +112,11 @@ function WorldRender:execute(dt)
 	end
 
 	self.camera:detach()
+
+	if self.fade ~= 0 then
+		love.graphics.setColor(255, 255, 255, 255*self.fade)
+		love.graphics.rectangle("fill", 0,0, love.graphics.getWidth(), love.graphics.getHeight())
+	end
 end
 
 function WorldRender:updateCamera()

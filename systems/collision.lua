@@ -40,14 +40,15 @@ function Collision:moveComponent(entity, newPosition)
 
 	newPosition = newPosition - (Vector(data.width, data.height) / 2 )
 
-	local actualX, actualY, cols, len = self.bump:move(entity.uuid, newPosition.x, newPosition.y, function(i, o)
-		local other = self:composeComponents(o, "collision")
-		if other.collision.solid and data.solid then
-			return "slide"
-		else
-			return "cross"
-		end
-	end)
+	-- local actualX, actualY, cols, len = self.bump:move(entity.uuid, newPosition.x, newPosition.y, function(i, o)
+	-- 	local other = self:composeComponents(o, "collision")
+	-- 	if other.collision.solid and data.solid then
+	-- 		return "slide"
+	-- 	else
+	-- 		return "cross"
+	-- 	end
+	-- end)
+	local actualX, actualY, cols, len = self.bump:move(entity.uuid, newPosition.x, newPosition.y)
 
 	for _,col in ipairs(cols) do
 		table.insert(self.pendingCollisions, col)
@@ -73,6 +74,7 @@ function Collision:execute(dt)
 			entB:onContact(entA)
 		end
 	end
+	self.pendingCollisions = {}
 end
 
 return Collision

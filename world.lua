@@ -63,7 +63,7 @@ function World:tagEntity(entity, tag)
 		self.tags[tag] = {}
 	end
 
-	table.insert(self.tags[tag], entity)
+	self.tags[tag][entity.uuid] = entity
 end
 
 function World:getTaggedEntities(tag)
@@ -74,10 +74,25 @@ function World:getTaggedEntities(tag)
 	return self.tags[tag]
 end
 
+function World:enableTaggedEntities(tag)
+	if self.tags[tag] == nil then
+		self.tags[tag] = {}
+	end
+
+	for _,ent in pairs(self.tags[tag]) do
+		ent:enableAllComponents()
+	end
+end
+
+
 function World:removeEntity(entity)
 	entity:removeAllComponents()
 	self.entities[entity.uuid] = nil
 	entity:onRemove()
+
+	for _, entities in pairs(self.tags) do
+		entities[entity.uuid] = nil
+	end
 end
 
 function World:removeBookmark(name)
