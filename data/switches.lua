@@ -8,9 +8,9 @@ return {
 		},
 
 		enable = function(self, switch)
-			-- Enable world renderer
-			local worldRenderer = self.world:getSystem("worldrender")
-			worldRenderer:enable()
+			-- Fade in
+			print("fading")
+			self.world:getSystem("faderender"):fadeIn(3)
 
 			-- Disable "Press button" text
 			local text = self.world:getBookmark("graphicsSwitch_text")

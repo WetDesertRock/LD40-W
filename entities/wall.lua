@@ -10,7 +10,7 @@ function Wall:init(center, rect)
 		solid = true
 	})
 
-	self:addComponent("worldrender", "wall")
+	self:addComponent("wallrender", {})
 end
 
 return Wall

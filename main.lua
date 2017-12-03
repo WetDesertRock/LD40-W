@@ -22,16 +22,22 @@ function love.load()
 		"movement",
 		"playermovement",
 		"followermovement",
-		"worldrender",
 		"switch",
 		"input",
-		"textrender",
-		"snatchereye",
 		"snatcherai",
 		"followerai",
 		"followerspawner",
 		"collision",
-		"mortal"
+		"mortal",
+		"textrender",
+		"playerrender",
+		"followerrender",
+		"snatcherrender",
+		"switchrender",
+		"wallrender",
+		"faderender",
+		"debugrender",
+		"camera"
 	)
 
 	mapLoader(world)
@@ -44,16 +50,24 @@ function love.update(dt)
 		"switch",
 		"followermovement",
 		"collision",
-		"snatchereye",
 		"snatcherai",
 		"followerai",
 		"followerspawner",
-		"mortal"
+		"mortal",
+		"camera"
 	)(dt)
 end
 
 function love.draw()
 	love.graphics.setBackgroundColor(240, 240, 240)
-	world:executeSystem("worldrender")
-	world:executeSystem("textrender")
+	world:executeSystems(
+		"wallrender",
+		"switchrender",
+		"followerrender",
+		"snatcherrender",
+		"playerrender",
+		-- "debugrender",
+		"faderender",
+		"textrender"
+	)()
 end

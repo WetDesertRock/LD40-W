@@ -4,7 +4,7 @@ local Switch = require("entity"):extend()
 
 function Switch:init(position, id)
 	self:addComponent("position", position:clone())
-	self:addComponent("worldrender", "switch")
+	self:addComponent("switchrender", {})
 
 	self:addComponent("switch", switches[id].data)
 end

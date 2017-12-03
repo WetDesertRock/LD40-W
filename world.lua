@@ -46,8 +46,10 @@ function World:executeSystems(...)
 	end
 end
 
-function World:getSystem(system)
-	return self.systems[system]
+function World:getSystem(name)
+	local system = self.systems[name]
+	assert(system ~= nil, "Could not find system: "..name)
+	return system
 end
 
 function World:getEntity(uuid)

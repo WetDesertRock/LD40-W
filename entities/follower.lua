@@ -24,7 +24,7 @@ function Follower:init(position)
 		alive = true
 	})
 
-	self:addComponent("worldrender", "enemy")
+	self:addComponent("followerrender", {})
 end
 
 function Follower:onDeath()

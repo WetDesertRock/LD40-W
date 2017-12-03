@@ -5,19 +5,14 @@ function TimingSystem:init(...)
 
 	self.threads = coil.group()
 	self.tweens = flux.group()
-	self.lastUpdate = love.timer.getTime()
 end
 
 function TimingSystem:execute()
 	if not self.enabled then return end
 
-	local now = love.timer.getTime()
-	local dt = now - self.lastUpdate
-
+	local dt = love.timer.getDelta()
 	self.threads:update(dt)
 	self.tweens:update(dt)
-
-	self.lastUpdate = now
 end
 
 return TimingSystem
