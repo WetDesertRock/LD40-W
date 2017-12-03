@@ -1,19 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="100" tileheight="100" nextobjectid="11">
+<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="100" tileheight="100" nextobjectid="15">
  <objectgroup name="MapObjects">
   <object id="1" name="Player" type="player" x="5000" y="8613" width="100" height="100">
    <ellipse/>
   </object>
   <object id="2" name="graphicsSwitch" type="switch" x="5000" y="8611" width="100" height="89"/>
-  <object id="4" name="Wall" type="wall" x="4400" y="8200" width="100" height="1600"/>
-  <object id="5" name="Wall" type="wall" x="3700" y="9200" width="2000" height="100"/>
+  <object id="4" name="Wall" type="wall" x="4736" y="7408" width="100" height="1600"/>
+  <object id="5" name="Wall" type="wall" x="4200" y="8800" width="2000" height="100"/>
   <object id="8" name="Snatcher" type="snatcher" x="5000" y="8300" width="100" height="100">
    <properties>
     <property name="tag" value="snatchers"/>
    </properties>
    <ellipse/>
   </object>
-  <object id="10" name="Follower" type="follower" x="5004" y="8444" width="100" height="100">
+  <object id="10" name="Follower" type="follower" x="4892" y="8980" width="100" height="100">
+   <properties>
+    <property name="tag" value="followers"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="11" name="Follower" type="follower" x="5050" y="9466" width="100" height="100">
+   <properties>
+    <property name="tag" value="followers"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="12" name="Follower" type="follower" x="5214" y="9122" width="100" height="100">
+   <properties>
+    <property name="tag" value="followers"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="13" name="Follower" type="follower" x="5446" y="9574" width="100" height="100">
+   <properties>
+    <property name="tag" value="followers"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="14" name="Follower" type="follower" x="4902" y="9190" width="100" height="100">
    <properties>
     <property name="tag" value="followers"/>
    </properties>

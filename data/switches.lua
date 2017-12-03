@@ -23,10 +23,12 @@ return {
 			player:addComponent("playermovement", {})
 
 			-- Enable followers
-			local followers = self.world:getTaggedEntities("followers")
-			for _,follower in ipairs(followers) do
-				follower:enableAllComponents()
-			end
+			-- local followers = self.world:getTaggedEntities("followers")
+			-- for _,follower in ipairs(followers) do
+			-- 	follower:enableAllComponents()
+			-- end
+			local playerpos = player:getComponent("position")
+			self.world:getSystem("followerspawner"):spawn(30)
 		end,
 
 		disable = function(self, switch) end -- Sticky switch

@@ -4,7 +4,7 @@ local Follower = require("entity"):extend()
 function Follower:init(position)
 	self:addComponent("position", position:clone())
 	self:addComponent("movement", {
-		speed = 100,
+		speed = 90 + love.math.random(-10,10),
 		direction = 0
 	})
 	self:addComponent("followermovement", {})
@@ -15,8 +15,8 @@ function Follower:init(position)
 
 	self:addComponent("collision", {
 		position = self:getComponent("position"):clone(),
-		width = 20,
-		height = 20,
+		width = 16,
+		height = 16,
 		solid = true
 	})
 
@@ -30,19 +30,7 @@ end
 function Follower:onDeath()
 	self.world:removeEntity(self)
 
-	local player = self.world:getBookmark("player")
-	if player == nil then
-		print("WARNING: Unknown player for follower respawn")
-	end
-	local playerpos = player:getComponent("position")
-
-	local dist = love.math.random(750, 1000)
-	local offset = Vector.fromAngleMag(love.math.random() * math.pi, dist)
-
-	local pos = playerpos + offset
-
-	-- Add replacement follower
-	self.world:addEntity(Follower, pos)
+	self.world:getSystem("followerspawner"):spawn(1)
 end
 
 

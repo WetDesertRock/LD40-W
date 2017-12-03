@@ -27,6 +27,7 @@ function love.load()
 		"snatchereye",
 		"snatcherai",
 		"followerai",
+		"followerspawner",
 		"mortal"
 	)
 
@@ -43,6 +44,7 @@ function love.update(dt)
 		"snatchereye",
 		"snatcherai",
 		"followerai",
+		"followerspawner",
 		"mortal"
 	)(dt)
 end

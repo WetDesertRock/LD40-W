@@ -19,8 +19,8 @@ function FollowerAI:execute(dt)
 			end
 
 			local ldist = data.lastPosition:distance(composition.position)
-			-- If the last recorded position isn't more than a quarter of its max speed: respawn
-			if ldist < composition.movement.speed/4 then
+			-- If the last recorded position isn't more than a ratio of its max speed: respawn
+			if ldist < composition.movement.speed/8 then
 				composition.mortal.alive = false
 			end
 
