@@ -17,9 +17,15 @@ function World:addSystems(...)
 	end
 end
 
-function World:addEntity(entity, ...)
+function World:addEntity(cls, ...)
+	-- Create entity from given class
+	local entity = cls(self)
+
+	-- Add it and run init
 	self.entities[entity.uuid] = entity
-	entity:init(self, ...)
+	entity:init(...)
+
+	return entity
 end
 
 function World:addBookmark(name, entity)
@@ -53,7 +59,7 @@ end
 
 function World:removeEntity(entity)
 	entity:removeAllComponents()
-	self.entities[name] = nil
+	self.entities[entity.uuid] = nil
 	entity:onRemove()
 end
 

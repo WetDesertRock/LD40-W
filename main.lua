@@ -9,6 +9,7 @@ Vector = require("lib.vector")
 require("lib.globalwatch")
 
 local world = require("world")()
+local mapLoader = require("maploader")
 
 function love.load()
 	world:addSystems(
@@ -20,17 +21,11 @@ function love.load()
 		"collision",
 		"switch",
 		"input",
+		"textrender",
 		"mortal"
 	)
 
-	local ent = require("entities.player")()
-	world:addEntity(ent)
-
-	-- local ent = require("entities.follower")()
-	-- world:addEntity(ent)
-
-	local ent = require("entities.switch")()
-	world:addEntity(ent)
+	mapLoader(world)
 end
 
 function love.update(dt)
@@ -47,4 +42,5 @@ end
 function love.draw()
 	love.graphics.setBackgroundColor(240, 240, 240)
 	world:executeSystem("worldrender")
+	world:executeSystem("textrender")
 end

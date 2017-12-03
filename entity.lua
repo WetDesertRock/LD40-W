@@ -1,13 +1,12 @@
 local Entity = Object:extend()
 
-function Entity:new()
+function Entity:new(world)
 	self.uuid = lume.uuid()
 	self.components = {}
-	self.world = nil
+	self.world = world
 end
 
-function Entity:init(world, ...)
-	self.world = world
+function Entity:init(...)
 end
 
 function Entity:getComponent(system)

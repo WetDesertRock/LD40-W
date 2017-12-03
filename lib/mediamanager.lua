@@ -61,7 +61,7 @@ end
 
 function MediaManager:getFont(path,size)
   path = self.pre.."assets/fonts/"..path
-  fpath = tostring(size)..path
+  local fpath = tostring(size)..path
   if self.fonts[fpath] == nil then
     self.fonts[fpath] = love.graphics.newFont( path,size )
   end

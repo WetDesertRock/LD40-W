@@ -1,9 +1,7 @@
 local Follower = require("entity"):extend()
 
 
-function Follower:init(...)
-	Follower.super.init(self, ...)
-
+function Follower:init()
 	self:addComponent("position", Vector(200,200))
 	self:addComponent("movement", {
 		speed = 100,

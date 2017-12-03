@@ -18,21 +18,30 @@ local renderers = {
 	switch = function(self, entity)
 		local compo = entity:composeComponents("position", "switch")
 
-		local size = Vector(16, 24)
+		local size = Vector(20, 30)
 		local sx,sy = (compo.position - size / 2):unpack()
 
-		love.graphics.setColor(20, 20, 50)
-		love.graphics.rectangle("fill", sx,sy, size.x,size.y, 7)
+		love.graphics.setColor(20, 20, 120)
+		love.graphics.rectangle("fill", sx,sy, size.x,size.y, 10)
 
 		-- Draw switch indicator
-		local offset = Vector(0, -5)
+		local offset = Vector(0, 8)
 		if compo.switch.state then
 			offset = offset * -1
 		end
 
 		local x,y = (compo.position + offset):unpack()
 		love.graphics.setColor(255, 255, 255)
-		love.graphics.circle("line", x,y, 4)
+		love.graphics.circle("line", x,y, 6)
+
+		-- Draw name
+		local x,y = (compo.position + Vector(-32, 24)):unpack()
+		local limit = 42
+		local font = Media:getFont("Rounded_Elegance.ttf", 40)
+
+		love.graphics.setColor(20, 20, 120)
+		love.graphics.setFont(font)
+		love.graphics.printf(compo.switch.title, x,y, limit, "center")
 	end,
 
 	debug = function(self, entity)
@@ -51,6 +60,7 @@ local WorldRender = require("system"):extend()
 
 function WorldRender:init(...)
 	WorldRender.super.init(self, ...)
+	self.enabled = false
 
 	self.camera = Camera.new(0, 0)
 	self:updateCamera() -- Update camera if able to
@@ -70,7 +80,7 @@ function WorldRender:execute(dt)
 		renderers[data](self, entity)
 
 		-- Render debug info
-		renderers.debug(self, entity)
+		-- renderers.debug(self, entity)
 	end
 
 	self.camera:detach()

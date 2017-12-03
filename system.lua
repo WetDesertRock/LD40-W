@@ -16,6 +16,14 @@ function System:composeComponents(uuid, ...)
 	return entity:composeComponents(...)
 end
 
+function System:enable()
+	self.enabled = true
+end
+
+function System:disable()
+	self.enabled = false
+end
+
 function System:addComponent(entity,data)
 	self.components[entity.uuid] = data
 	self:onAddComponent(entity, data)
