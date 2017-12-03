@@ -1,42 +1,12 @@
+local switches = require("data.switches")
+
 local Switch = require("entity"):extend()
 
-local switchRoutines = {
-	graphicsSwitch = {
-		enable = function(self, switch)
-			-- Enable world renderer
-			local worldRenderer = self.world:getSystem("worldrender")
-			worldRenderer:enable()
-
-			-- Disable "Press button" text
-			local text = self.world:getBookmark("graphicsSwitch_text")
-			if text then
-				self.world:removeEntity(text)
-			end
-
-			-- Add playermovement
-			local player = self.world:getBookmark("player")
-			player:addComponent("playermovement", {})
-		end,
-		disable = function(self, switch) end -- Sticky switch
-	}
-}
-
-function Switch:init()
-	-- self:addComponent("position", Vector(0,0))
+function Switch:init(position, id)
+	self:addComponent("position", position:clone())
 	self:addComponent("worldrender", "switch")
-	-- self:addComponent("switch", {
-	-- 	id = "graphicsSwitch",
-	-- 	title = "G",
-	-- 	sticky = true,
-	-- 	state = false
-	-- })
 
-	-- self:addComponent("collision", {
-	-- 	position = self:getComponent("position"):clone(),
-	-- 	width = 20,
-	-- 	height = 20,
-	-- 	solid = false
-	-- })
+	self:addComponent("switch", switches[id].data)
 end
 
 function Switch:onSwitch()
@@ -47,7 +17,6 @@ function Switch:onSwitch()
 
 	switch.state = not switch.state
 
-	print(switch.id)
 	if switch.state then
 		self:enable()
 	else
@@ -57,13 +26,13 @@ end
 
 function Switch:enable()
 	local switch = self:getComponent("switch")
-	local fun = switchRoutines[switch.id].enable(self, switch)
+	local fun = switches[switch.id].enable(self, switch)
 	Media:playSound("SwitchOn.ogg", 0.5)
 end
 
 function Switch:disable()
 	local switch = self:getComponent("switch")
-	local fun = switchRoutines[switch.id].disable(self, switch)
+	local fun = switches[switch.id].disable(self, switch)
 	Media:playSound("SwitchOff.ogg", 0.5)
 end
 

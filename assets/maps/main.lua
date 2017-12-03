@@ -85,20 +85,24 @@ return {
           height = 100,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "snatchers"
+          }
         },
         {
           id = 10,
           name = "Follower",
           type = "follower",
           shape = "ellipse",
-          x = 5000,
-          y = 7800,
+          x = 5168,
+          y = 8484,
           width = 100,
           height = 100,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "followers"
+          }
         }
       }
     }

@@ -1,35 +1,34 @@
-local switches = require("data.switches")
-
 local loaders = {
 	player = function(world, object)
-		local ent = world:addEntity(require("entities.player"))
+		local ent = world:addEntity(require("entities.player"), object.center)
 
-		ent:addComponent("position", object.center:clone())
-		ent:addComponent("mortal", {
-			alive = true
-		})
-		ent:addComponent("collision", {
-			position = ent:getComponent("position"):clone(),
-			width = 20,
-			height = 20,
-			solid = true
-		})
-
+		if object.tag then
+			world:tagEntity(ent, object.tag)
+		end
 	end,
 
 	switch = function(world, object)
-		local ent = world:addEntity(require("entities.switch"))
+		local ent = world:addEntity(require("entities.switch"), object.center, object.name)
 
-		ent:addComponent("position", object.center:clone())
-		ent:addComponent("switch", switches[object.name])
+		if object.tag then
+			world:tagEntity(ent, object.tag)
+		end
 	end,
 
 	follower = function(world, object)
-		local ent = world:addEntity(require("entities.follower"), object.center:clone())
+		local ent = world:addEntity(require("entities.follower"), object.center)
+		ent:disableAllComponents()
+		if object.tag then
+			world:tagEntity(ent, object.tag)
+		end
 	end,
 
 	snatcher = function(world, object)
-		local ent = world:addEntity(require("entities.snatcher"), object.center:clone())
+		local ent = world:addEntity(require("entities.snatcher"), object.center)
+		ent:disableAllComponents()
+		if object.tag then
+			world:tagEntity(ent, object.tag)
+		end
 	end
 }
 
@@ -48,6 +47,7 @@ local function loadMap(world)
 					name = object.name,
 					type = object.type,
 					center = center,
+					tag = object.properties.tag,
 					raw = object
 				}
 				table.insert(mapObjects, obj)

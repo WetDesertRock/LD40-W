@@ -4,6 +4,7 @@ function World:new()
 	self.entities = {}
 	self.systems = {}
 	self.bookmarks = {}
+	self.tags = {}
 end
 
 function World:addSystem(name)
@@ -55,6 +56,22 @@ end
 
 function World:getBookmark(name)
 	return self.bookmarks[name]
+end
+
+function World:tagEntity(entity, tag)
+	if self.tags[tag] == nil then
+		self.tags[tag] = {}
+	end
+
+	table.insert(self.tags[tag], entity)
+end
+
+function World:getTaggedEntities(tag)
+	if self.tags[tag] == nil then
+		self.tags[tag] = {}
+	end
+
+	return self.tags[tag]
 end
 
 function World:removeEntity(entity)

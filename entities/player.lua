@@ -1,22 +1,22 @@
 local Player = require("entity"):extend()
 
-function Player:init()
-	-- self:addComponent("position", Vector(0,0))
+function Player:init(position)
+	self:addComponent("position", position)
 	self:addComponent("movement", {
 		speed = 100
 	})
 	self:addComponent("worldrender", "player")
-  --
-	-- self:addComponent("collision", {
-	-- 	position = self:getComponent("position"):clone(),
-	-- 	width = 20,
-	-- 	height = 20,
-	-- 	solid = true
-	-- })
-  --
-	-- self:addComponent("mortal", {
-	-- 	alive = true
-	-- })
+
+	self:addComponent("collision", {
+		position = self:getComponent("position"):clone(),
+		width = 20,
+		height = 20,
+		solid = true
+	})
+
+	self:addComponent("mortal", {
+		alive = true
+	})
 
 	self.world:addBookmark("player", self)
 end
