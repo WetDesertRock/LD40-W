@@ -32,9 +32,11 @@ function Entity:addComponent(name, data)
 end
 
 function Entity:removeComponent(name)
-	local system = self.world:getSystem(name)
-	system:removeComponent(self)
-	self.components[name] = nil
+	if self.components[name] then
+		local system = self.world:getSystem(name)
+		system:removeComponent(self)
+		self.components[name] = nil
+	end
 end
 
 function Entity:removeAllComponents()

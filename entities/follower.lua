@@ -13,7 +13,7 @@ function Follower:init()
 		position = self:getComponent("position"):clone(),
 		width = 20,
 		height = 20,
-		sold = true
+		solid = true
 	})
 
 	self:addComponent("mortal", {

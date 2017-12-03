@@ -19,6 +19,21 @@ function Collision:onRemoveComponent(entity, data)
 	self.bump:remove(entity.uuid)
 end
 
+function Collision:getCloseEntities(center, range)
+	local items = self.bump:queryRect(center.x - range, center.y - range, range*2, range*2)
+
+	local entities = {}
+	for _,uuid in ipairs(items) do
+		local ent = self.world:getEntity(uuid)
+		local pos = ent:getComponent("position")
+		if pos:distance(center) < range then
+			table.insert(entities, ent)
+		end
+	end
+
+	return entities
+end
+
 function Collision:moveComponent(entity, newPosition)
 	local data = self.components[entity.uuid]
 

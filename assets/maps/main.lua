@@ -8,7 +8,7 @@ return {
   height = 100,
   tilewidth = 100,
   tileheight = 100,
-  nextobjectid = 8,
+  nextobjectid = 10,
   properties = {},
   tilesets = {},
   layers = {
@@ -69,6 +69,19 @@ return {
           x = 3700,
           y = 9200,
           width = 2000,
+          height = 100,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 8,
+          name = "Snatcher",
+          type = "snatcher",
+          shape = "ellipse",
+          x = 5000,
+          y = 8300,
+          width = 100,
           height = 100,
           rotation = 0,
           visible = true,

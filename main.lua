@@ -1,8 +1,8 @@
 -- Set up globals
 Object = require("lib.classic")
 lume = require("lib.lume")
+coil = require("lib.coil")
 Media = require("lib.mediamanager")
-Rect = require("lib.rectangle")
 Vector = require("lib.vector")
 
 -- Watch out for globals
@@ -22,6 +22,8 @@ function love.load()
 		"switch",
 		"input",
 		"textrender",
+		"snatchereye",
+		"snatcherai",
 		"mortal"
 	)
 
@@ -35,6 +37,8 @@ function love.update(dt)
 		"switch",
 		"followermovement",
 		"collision",
+		"snatchereye",
+		"snatcherai",
 		"mortal"
 	)(dt)
 end
