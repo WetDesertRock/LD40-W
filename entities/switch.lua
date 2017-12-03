@@ -58,11 +58,13 @@ end
 function Switch:enable()
 	local switch = self:getComponent("switch")
 	local fun = switchRoutines[switch.id].enable(self, switch)
+	Media:playSound("SwitchOn.ogg", 0.5)
 end
 
 function Switch:disable()
 	local switch = self:getComponent("switch")
 	local fun = switchRoutines[switch.id].disable(self, switch)
+	Media:playSound("SwitchOff.ogg", 0.5)
 end
 
 

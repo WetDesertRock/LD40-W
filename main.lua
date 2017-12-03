@@ -12,6 +12,8 @@ local world = require("world")()
 local mapLoader = require("maploader")
 
 function love.load()
+	Media:preloadSounds()
+	Media:preloadImages()
 	world:addSystems(
 		"position",
 		"movement",
