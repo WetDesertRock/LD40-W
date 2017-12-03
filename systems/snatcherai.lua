@@ -49,7 +49,4 @@ function SnatcherAI:attack(this, other)
 	end)
 end
 
-
-
-
 return SnatcherAI

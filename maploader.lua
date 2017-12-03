@@ -24,6 +24,10 @@ local loaders = {
 		ent:addComponent("switch", switches[object.name])
 	end,
 
+	follower = function(world, object)
+		local ent = world:addEntity(require("entities.follower"), object.center:clone())
+	end,
+
 	snatcher = function(world, object)
 		local ent = world:addEntity(require("entities.snatcher"), object.center:clone())
 	end

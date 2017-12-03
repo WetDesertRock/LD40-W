@@ -24,6 +24,7 @@ function love.load()
 		"textrender",
 		"snatchereye",
 		"snatcherai",
+		"followerai",
 		"mortal"
 	)
 
@@ -39,6 +40,7 @@ function love.update(dt)
 		"collision",
 		"snatchereye",
 		"snatcherai",
+		"followerai",
 		"mortal"
 	)(dt)
 end

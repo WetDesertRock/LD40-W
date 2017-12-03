@@ -5,16 +5,15 @@ function FollowerMovement:execute(dt)
 
 	local player = self.world:getBookmark("player")
 	if player == nil then return end
+	local playerpos = player:getComponent("position")
 
 	local collisionSystem = self.world:getSystem("collision")
 
-	local playercomp = player:composeComponents("position")
 
 	for uuid, data in pairs(self.components) do
 		local composition = self:composeComponents(uuid, "position", "movement", "collision")
-		local player
 
-		local ndir = (playercomp.position - composition.position):normalize()
+		local ndir = (playerpos - composition.position):normalize()
 
 		local npos = composition.position + ndir * composition.movement.speed * dt
 

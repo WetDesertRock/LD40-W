@@ -8,7 +8,7 @@ return {
   height = 100,
   tilewidth = 100,
   tileheight = 100,
-  nextobjectid = 10,
+  nextobjectid = 11,
   properties = {},
   tilesets = {},
   layers = {
@@ -81,6 +81,19 @@ return {
           shape = "ellipse",
           x = 5000,
           y = 8300,
+          width = 100,
+          height = 100,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 10,
+          name = "Follower",
+          type = "follower",
+          shape = "ellipse",
+          x = 5000,
+          y = 7800,
           width = 100,
           height = 100,
           rotation = 0,

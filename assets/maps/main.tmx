@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="100" tileheight="100" nextobjectid="10">
+<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="100" tileheight="100" nextobjectid="11">
  <objectgroup name="MapObjects">
   <object id="1" name="Player" type="player" x="5000" y="8613" width="100" height="100">
    <ellipse/>
@@ -8,6 +8,9 @@
   <object id="4" name="Wall" type="wall" x="4400" y="8200" width="100" height="1600"/>
   <object id="5" name="Wall" type="wall" x="3700" y="9200" width="2000" height="100"/>
   <object id="8" name="Snatcher" type="snatcher" x="5000" y="8300" width="100" height="100">
+   <ellipse/>
+  </object>
+  <object id="10" name="Follower" type="follower" x="5000" y="7800" width="100" height="100">
    <ellipse/>
   </object>
  </objectgroup>
