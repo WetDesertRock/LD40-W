@@ -26,8 +26,10 @@ function Collision:getCloseEntities(center, range)
 	for _,uuid in ipairs(items) do
 		local ent = self.world:getEntity(uuid)
 		local pos = ent:getComponent("position")
-		if pos:distance(center) < range then
-			table.insert(entities, ent)
+		if pos then
+			if pos:distance(center) < range then
+				table.insert(entities, ent)
+			end
 		end
 	end
 

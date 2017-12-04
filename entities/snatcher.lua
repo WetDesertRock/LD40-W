@@ -10,7 +10,6 @@ function Snatcher:init(position)
 	self:addComponent("mortal", {
 		alive = true
 	})
-	-- self:addComponent("worldrender", "snatcher")
 
 	self:addComponent("snatcherai", {
 		origin = position:clone(),
@@ -20,6 +19,11 @@ function Snatcher:init(position)
 	self:addComponent("snatcherrender", {
 		direction = Vector.fromAngleMag(love.math.random() * math.pi * 2, 1),
 		phaseShift = love.math.random()
+	})
+	self:addComponent("soundsystem", {
+		volume = 0.5,
+		file = "LD40_Snatcher.ogg",
+		maxdist = 100
 	})
 end
 

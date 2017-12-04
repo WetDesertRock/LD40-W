@@ -45,6 +45,20 @@ function SnatcherAI:attack(this, other)
 
 	self.tweens:to(thisCompo.position, 0.06, {x = tgtx, y = tgty}):oncomplete(function()
 		otherCompo.mortal.alive = false
+		local snd = self.world:getSystem("soundsystem"):playSound({
+			"LD40_Snatches-01.ogg",
+			"LD40_Snatches-02.ogg",
+			"LD40_Snatches-03.ogg",
+			"LD40_Snatches-04.ogg",
+			"LD40_Snatches-05.ogg",
+			"LD40_Snatches-06.ogg"
+		}, thisCompo.position)
+
+		if snd and other:is(require("entities.player")) then
+			snd:setRelative(true)
+			snd:setPosition(0,0,0)
+			snd:setVolume(1)
+		end
 
 		other:enableComponent("followermovement")
 		other:enableComponent("playermovement")

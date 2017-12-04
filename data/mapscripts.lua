@@ -16,6 +16,7 @@ return {
 
 		--- Set initial states of systems
 		world:getSystem("linerender"):disable()
+		world:getSystem("soundsystem"):disable()
 	end,
 	loaders = {
 		player = function(world, object)
@@ -36,16 +37,16 @@ return {
 
 		follower = function(world, object)
 			local ent = world:addEntity(require("entities.follower"), object.center)
-			ent:disableAllComponents()
 			if object.tag then
+				ent:disableAllComponents()
 				world:tagEntity(ent, object.tag)
 			end
 		end,
 
 		snatcher = function(world, object)
 			local ent = world:addEntity(require("entities.snatcher"), object.center)
-			ent:disableAllComponents()
 			if object.tag then
+				ent:disableAllComponents()
 				world:tagEntity(ent, object.tag)
 			end
 		end,

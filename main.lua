@@ -7,6 +7,10 @@ Media = require("lib.mediamanager")
 Rect = require("lib.rectangle")
 Vector = require("lib.vector")
 
+SwitchStates = {
+	sound = false
+}
+
 -- Watch out for globals
 require("lib.globalwatch")
 
@@ -40,12 +44,14 @@ function love.load()
 		"debugrender",
 		"linerender",
 		"barrierrender",
+		"soundsystem",
 		"camera"
 	)
 
 	mapLoader(world)
 
-	Media:playSound("LD40_Ambient.ogg", 0.005):setLooping(1)
+	local src = Media:playSound("LD40_Ambient.ogg", 0.03)
+	src:setLooping(1)
 end
 
 function love.update(dt)
@@ -58,6 +64,7 @@ function love.update(dt)
 		"snatcherai",
 		"followerai",
 		"followerspawner",
+		"soundsystem",
 		"mortal",
 		"camera"
 	)(dt)

@@ -3,27 +3,29 @@ return {
 		data = {
 			id = "graphicsSwitch",
 			title = "G",
-			sticky = true,
+			sticky = false,
 			state = false
 		},
 
 		enable = function(self, switch)
-			-- Fade in
-			self.world:getSystem("faderender"):fadeIn(3)
+			if not switch.triggered then
+				-- Fade in
+				self.world:getSystem("faderender"):fadeIn(3)
 
-			-- Disable "Press button" text
-			local text = self.world:getBookmark("graphicsSwitch_text")
-			if text then
-				self.world:removeEntity(text)
+				-- Disable "Press button" text
+				local text = self.world:getBookmark("graphicsSwitch_text")
+				if text then
+					self.world:removeEntity(text)
+				end
+
+				-- Add playermovement
+				local player = self.world:getBookmark("player")
+				player:addComponent("playermovement", {})
+
+				-- Enable followers
+				self.world:enableTaggedEntities("graphicsSwitch_followers")
+				self.world:getSystem("followerspawner"):spawn(20)
 			end
-
-			-- Add playermovement
-			local player = self.world:getBookmark("player")
-			player:addComponent("playermovement", {})
-
-			-- Enable followers
-			self.world:enableTaggedEntities("graphicsSwitch_followers")
-			self.world:getSystem("followerspawner"):spawn(20)
 		end,
 
 		disable = function(self, switch) end -- Sticky switch
@@ -60,8 +62,12 @@ return {
 			sticky = false,
 			state = false
 		},
-		enable = function(self, switch) end,
-		disable = function(self, switch) end
+		enable = function(self, switch)
+			self.world:getSystem("soundsystem"):enable()
+		end,
+		disable = function(self, switch)
+			self.world:getSystem("soundsystem"):disable()
+		end
 	},
 	pathingSwitch = {
 		data = {
