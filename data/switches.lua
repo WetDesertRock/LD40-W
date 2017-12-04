@@ -9,7 +9,6 @@ return {
 
 		enable = function(self, switch)
 			-- Fade in
-			print("fading")
 			self.world:getSystem("faderender"):fadeIn(3)
 
 			-- Disable "Press button" text
@@ -38,14 +37,50 @@ return {
 		},
 
 		enable = function(self, switch)
-			-- Kill all followers:
-			self.world:getSystem("followerai"):killAllFollowers()
+			if not switch.triggered then
+				-- Kill all followers:
+				self.world:getSystem("followerai"):killAllFollowers()
+				self.world:getSystem("faderender"):flash()
 
-			-- Enable followers
-			self.world:enableTaggedEntities("linesSwitch_enemies")
-			self.world:getSystem("followerspawner"):spawn(5)
+				-- Enable followers
+				self.world:enableTaggedEntities("linesSwitch_enemies")
+				self.world:getSystem("followerspawner"):spawn(5)
+			end
+			self.world:getSystem("linerender"):enable()
 		end,
 
-		disable = function(self, switch) end -- Sticky switch
-	}
+		disable = function(self, switch)
+			self.world:getSystem("linerender"):disable()
+		end
+	},
+	soundSwitch = {
+		data = {
+			id = "soundSwitch",
+			title = "S",
+			sticky = false,
+			state = false
+		},
+		enable = function(self, switch) end,
+		disable = function(self, switch) end
+	},
+	pathingSwitch = {
+		data = {
+			id = "pathingSwitch",
+			title = "P",
+			sticky = false,
+			state = false
+		},
+		enable = function(self, switch) end,
+		disable = function(self, switch) end
+	},
+	colorSwitch = {
+		data = {
+			id = "colorSwitch",
+			title = "C",
+			sticky = false,
+			state = false
+		},
+		enable = function(self, switch) end,
+		disable = function(self, switch) end
+	},
 }

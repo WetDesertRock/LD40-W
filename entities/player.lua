@@ -1,7 +1,7 @@
 local Player = require("entity"):extend()
 
 function Player:init(position)
-	self:addComponent("position", position)
+	self:addComponent("position", position:clone())
 	self:addComponent("movement", {
 		speed = 170
 	})
@@ -18,14 +18,17 @@ function Player:init(position)
 		alive = true
 	})
 
+	self:addComponent("checkpoint", {
+		position = position:clone()
+	})
+
 	self.world:addBookmark("player", self)
 end
 
 function Player:onDeath()
-	self:removeComponent("playermovement")
-	self:removeComponent("collision")
-	self:removeComponent("mortal")
-	self.world:removeBookmark("player")
+	self:getComponent("mortal").alive = true
+	self.world:getSystem("faderender"):flash()
+	self:useCheckpoint()
 end
 
 function Player:onContact(other)
@@ -35,5 +38,20 @@ function Player:onContact(other)
 	end
 end
 
+function Player:setCheckpoint()
+	local checkpoint = self:getComponent("checkpoint")
+	local position = self:getComponent("position")
+	checkpoint.position = position:clone()
+end
+
+function Player:useCheckpoint()
+	local checkpoint = self:getComponent("checkpoint")
+	local position = self:getComponent("position")
+	position.x,position.y = checkpoint.position:unpack()
+
+	self.world:getSystem("collision"):teleportComponent(self, position)
+	-- Kill all followers
+	self.world:getSystem("followerai"):killAllFollowers()
+end
 
 return Player

@@ -37,14 +37,17 @@ function SnatcherAI:attack(this, other)
 	thisCompo.snatcherai.cooldown = 0.3
 
 	-- Remove targets movement
-	other:removeComponent("followermovement")
-	other:removeComponent("playermovement")
+	other:disableComponent("followermovement")
+	other:disableComponent("playermovement")
 
 	local tgtx,tgty = otherCompo.position:unpack()
 	local originx,originy = thisCompo.snatcherai.origin:unpack()
 
 	self.tweens:to(thisCompo.position, 0.06, {x = tgtx, y = tgty}):oncomplete(function()
 		otherCompo.mortal.alive = false
+
+		other:enableComponent("followermovement")
+		other:enableComponent("playermovement")
 		self.tweens:to(thisCompo.position, 0.15, {x = originx, y = originy})
 	end)
 end

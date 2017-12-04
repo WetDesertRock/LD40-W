@@ -10,8 +10,11 @@ function FadeRender:fadeOut(time)
 end
 
 function FadeRender:fadeIn(time)
-
 	self.tweens:to(self, time, {fade=0})
+end
+
+function FadeRender:flash()
+	self.tweens:to(self, 0.05, {fade=1}):after(0.05, {fade=0})
 end
 
 function FadeRender:execute(...)

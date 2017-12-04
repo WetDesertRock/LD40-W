@@ -40,15 +40,19 @@ function Collision:moveComponent(entity, newPosition)
 
 	newPosition = newPosition - (Vector(data.width, data.height) / 2 )
 
-	-- local actualX, actualY, cols, len = self.bump:move(entity.uuid, newPosition.x, newPosition.y, function(i, o)
-	-- 	local other = self:composeComponents(o, "collision")
-	-- 	if other.collision.solid and data.solid then
-	-- 		return "slide"
-	-- 	else
-	-- 		return "cross"
-	-- 	end
-	-- end)
-	local actualX, actualY, cols, len = self.bump:move(entity.uuid, newPosition.x, newPosition.y)
+	local actualX, actualY, cols, len = self.bump:move(entity.uuid, newPosition.x, newPosition.y, function(item, otheruuid)
+		local other = self.world:getEntity(otheruuid)
+		local isBarrier = other:is(require("entities.barrier")) or entity:is(require("entities.barrier"))
+		local isPlayer = other:is(require("entities.player")) or entity:is(require("entities.player"))
+
+		if not isBarrier then
+			return "slide"
+		elseif isBarrier and not isPlayer then
+			return "cross"
+		elseif isBarrier and isPlayer then
+			return "slide"
+		end
+	end)
 
 	for _,col in ipairs(cols) do
 		table.insert(self.pendingCollisions, col)
@@ -57,6 +61,16 @@ function Collision:moveComponent(entity, newPosition)
 	data.position.x, data.position.y = actualX, actualY
 
 	return Vector(actualX, actualY) + (Vector(data.width, data.height) / 2 )
+end
+
+function Collision:teleportComponent(entity, newPosition)
+	local data = self.components[entity.uuid]
+
+	newPosition = newPosition - (Vector(data.width, data.height) / 2 )
+
+	self.bump:update(entity.uuid, newPosition.x, newPosition.y)
+
+	data.position.x, data.position.y = newPosition:unpack()
 end
 
 function Collision:execute(dt)

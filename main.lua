@@ -18,6 +18,7 @@ function love.load()
 	Media:preloadImages()
 	world:addSystems(
 		"position",
+		"checkpoint",
 		"rectangle",
 		"movement",
 		"playermovement",
@@ -37,10 +38,14 @@ function love.load()
 		"wallrender",
 		"faderender",
 		"debugrender",
+		"linerender",
+		"barrierrender",
 		"camera"
 	)
 
 	mapLoader(world)
+
+	Media:playSound("LD40_Ambient.ogg", 0.005):setLooping(1)
 end
 
 function love.update(dt)
@@ -61,6 +66,8 @@ end
 function love.draw()
 	love.graphics.setBackgroundColor(240, 240, 240)
 	world:executeSystems(
+		"barrierrender",
+		"linerender",
 		"wallrender",
 		"switchrender",
 		"followerrender",

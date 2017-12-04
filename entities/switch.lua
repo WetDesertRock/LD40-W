@@ -6,6 +6,8 @@ function Switch:init(position, id)
 	self:addComponent("position", position:clone())
 	self:addComponent("switchrender", {})
 
+	assert(switches[id] ~= nil, "Unknown switch ID: "..id)
+	switches[id].data.triggered = false
 	self:addComponent("switch", switches[id].data)
 end
 
@@ -16,6 +18,9 @@ function Switch:onSwitch()
 	end
 
 	switch.state = not switch.state
+
+
+	self.world:getBookmark("player"):setCheckpoint()
 
 	if switch.state then
 		self:enable()
@@ -28,6 +33,7 @@ function Switch:enable()
 	local switch = self:getComponent("switch")
 	local fun = switches[switch.id].enable(self, switch)
 	Media:playSound("SwitchOn.ogg", 0.5)
+	switch.triggered = true
 end
 
 function Switch:disable()
