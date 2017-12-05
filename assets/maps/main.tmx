@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="100" tileheight="100" nextobjectid="589">
+<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="100" tileheight="100" nextobjectid="592">
  <objectgroup name="MapObjects">
   <object id="1" name="Player" type="player" x="5030" y="8642.4" width="40" height="40">
    <ellipse/>
@@ -288,7 +288,7 @@
    </properties>
    <ellipse/>
   </object>
-  <object id="291" name="Follower" type="follower" x="2310" y="6260" width="46.1774" height="46.1774">
+  <object id="291" name="Follower" type="follower" x="2512" y="6321" width="46.1774" height="46.1774">
    <properties>
     <property name="special" value="sprinter"/>
     <property name="tag" value="soundSwitch_enemies"/>
@@ -309,14 +309,14 @@
    </properties>
    <ellipse/>
   </object>
-  <object id="294" name="Follower" type="follower" x="2268" y="6212" width="46.1774" height="46.1774">
+  <object id="294" name="Follower" type="follower" x="2505" y="6376" width="46.1774" height="46.1774">
    <properties>
     <property name="special" value="sprinter"/>
     <property name="tag" value="soundSwitch_enemies"/>
    </properties>
    <ellipse/>
   </object>
-  <object id="295" name="Follower" type="follower" x="2241" y="6290" width="46.1774" height="46.1774">
+  <object id="295" name="Follower" type="follower" x="2426" y="6370" width="46.1774" height="46.1774">
    <properties>
     <property name="special" value="sprinter"/>
     <property name="tag" value="soundSwitch_enemies"/>
@@ -345,92 +345,396 @@
   <object id="306" name="Wall" type="wall" x="3905" y="5508" width="289" height="20"/>
   <object id="307" name="Wall" type="wall" x="4053" y="5497" width="2" height="378"/>
   <object id="308" name="Wall" type="wall" x="3931" y="5436" width="2" height="154"/>
-  <object id="309" name="Wall" type="wall" x="3875" y="5845" width="213" height="20"/>
-  <object id="310" name="Wall" type="wall" x="4156" y="5478" width="20" height="779"/>
-  <object id="311" name="Wall" type="wall" x="3917" y="6220" width="329" height="20"/>
-  <object id="312" name="Wall" type="wall" x="4150" y="6030" width="2" height="221"/>
-  <object id="313" name="Wall" type="wall" x="4113" y="6044" width="71" height="7"/>
+  <object id="309" name="Wall" type="wall" x="3875" y="5845" width="213" height="20">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="310" name="Wall" type="wall" x="4156" y="5478" width="20" height="779">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="311" name="Wall" type="wall" x="3917" y="6220" width="329" height="20">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="312" name="Wall" type="wall" x="4150" y="6030" width="2" height="221">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="313" name="Wall" type="wall" x="4113" y="6044" width="71" height="7">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
   <object id="314" name="Wall" type="wall" x="4098" y="5300" width="600" height="28"/>
-  <object id="315" name="Wall" type="wall" x="3912" y="5648" width="636" height="16"/>
-  <object id="316" name="Wall" type="wall" x="4212" y="5286" width="17" height="420"/>
-  <object id="326" name="Wall" type="wall" x="4425" y="6342" width="17" height="398"/>
-  <object id="327" name="Wall" type="wall" x="3926" y="6370" width="568" height="20"/>
-  <object id="328" name="Wall" type="wall" x="4067" y="6397" width="397" height="3"/>
-  <object id="329" name="Wall" type="wall" x="4083" y="6359" width="8" height="70"/>
-  <object id="330" name="Wall" type="wall" x="4478" y="6159" width="12" height="74"/>
-  <object id="331" name="Wall" type="wall" x="4300" y="6200" width="249" height="20"/>
-  <object id="332" name="Wall" type="wall" x="4317" y="6193" width="194" height="1"/>
-  <object id="333" name="Wall" type="wall" x="4371" y="5965" width="25" height="267"/>
-  <object id="334" name="Wall" type="wall" x="4256" y="6055" width="313" height="9"/>
-  <object id="335" name="Wall" type="wall" x="4403" y="6048" width="12" height="64"/>
-  <object id="336" name="Wall" type="wall" x="4056" y="6140" width="199" height="20"/>
-  <object id="337" name="Wall" type="wall" x="4106" y="6127" width="8" height="130"/>
-  <object id="338" name="Wall" type="wall" x="4243" y="5619" width="11" height="199"/>
-  <object id="339" name="Wall" type="wall" x="4203" y="5686" width="62" height="7"/>
-  <object id="340" name="Wall" type="wall" x="4373" y="5794" width="12" height="129"/>
-  <object id="341" name="Wall" type="wall" x="4358" y="5807" width="284" height="3"/>
-  <object id="342" name="Wall" type="wall" x="4358" y="5909" width="284" height="3"/>
-  <object id="343" name="Wall" type="wall" x="4618" y="5776" width="12" height="319"/>
-  <object id="344" name="Wall" type="wall" x="4744" y="5934" width="12" height="129"/>
-  <object id="345" name="Wall" type="wall" x="4605" y="6045" width="192" height="6"/>
-  <object id="346" name="Wall" type="wall" x="4779" y="5817" width="6" height="206"/>
-  <object id="347" name="Wall" type="wall" x="4740" y="6009" width="77" height="3"/>
-  <object id="348" name="Wall" type="wall" x="4719" y="5946" width="77" height="2"/>
-  <object id="349" name="Wall" type="wall" x="4657" y="6294" width="48" height="442"/>
+  <object id="315" name="Wall" type="wall" x="3912" y="5648" width="636" height="16">
+   <properties>
+    <property name="tag" value="colorSwich_walls"/>
+   </properties>
+  </object>
+  <object id="316" name="Wall" type="wall" x="4212" y="5286" width="17" height="420">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="326" name="Wall" type="wall" x="4425" y="6342" width="17" height="398">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="327" name="Wall" type="wall" x="3926" y="6370" width="568" height="20">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="328" name="Wall" type="wall" x="4067" y="6397" width="397" height="3">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="329" name="Wall" type="wall" x="4083" y="6359" width="8" height="70">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="330" name="Wall" type="wall" x="4478" y="6159" width="12" height="74">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="331" name="Wall" type="wall" x="4300" y="6200" width="249" height="20">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="332" name="Wall" type="wall" x="4317" y="6193" width="194" height="1">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="333" name="Wall" type="wall" x="4371" y="5965" width="25" height="267">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="334" name="Wall" type="wall" x="4256" y="6055" width="313" height="9">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="335" name="Wall" type="wall" x="4403" y="6048" width="12" height="64">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="336" name="Wall" type="wall" x="4056" y="6140" width="199" height="20">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="337" name="Wall" type="wall" x="4106" y="6127" width="8" height="130">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="338" name="Wall" type="wall" x="4243" y="5619" width="11" height="199">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="339" name="Wall" type="wall" x="4203" y="5686" width="62" height="7">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="340" name="Wall" type="wall" x="4373" y="5794" width="12" height="129">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="341" name="Wall" type="wall" x="4358" y="5807" width="284" height="3">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="342" name="Wall" type="wall" x="4358" y="5909" width="284" height="3">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="343" name="Wall" type="wall" x="4618" y="5776" width="12" height="319">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="344" name="Wall" type="wall" x="4744" y="5934" width="12" height="129">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="345" name="Wall" type="wall" x="4605" y="6045" width="192" height="6">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="346" name="Wall" type="wall" x="4779" y="5817" width="6" height="206">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="347" name="Wall" type="wall" x="4740" y="6009" width="77" height="3">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="348" name="Wall" type="wall" x="4719" y="5946" width="77" height="2">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="349" name="Wall" type="wall" x="4657" y="6294" width="48" height="442">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
   <object id="350" name="Wall" type="wall" x="4646" y="6445" width="354" height="20"/>
   <object id="351" name="Wall" type="wall" x="4901" y="6416" width="18" height="308"/>
   <object id="352" name="Wall" type="wall" x="4895" y="6428" width="2" height="288"/>
-  <object id="353" name="Wall" type="wall" x="4709" y="6338" width="2" height="388"/>
-  <object id="354" name="Wall" type="wall" x="4561" y="6365" width="198" height="9"/>
-  <object id="355" name="Wall" type="wall" x="4596" y="6196" width="12" height="201"/>
-  <object id="356" name="Wall" type="wall" x="4589" y="6316" width="151" height="2"/>
-  <object id="357" name="Wall" type="wall" x="4720" y="6258" width="12" height="137"/>
-  <object id="358" name="Wall" type="wall" x="4588" y="6268" width="186" height="9"/>
-  <object id="359" name="Wall" type="wall" x="4639" y="6133" width="6" height="108"/>
-  <object id="360" name="Wall" type="wall" x="4718" y="6101" width="6" height="108"/>
-  <object id="361" name="Wall" type="wall" x="4634" y="6197" width="102" height="3"/>
-  <object id="362" name="Wall" type="wall" x="4629" y="6140" width="172" height="3"/>
-  <object id="363" name="Wall" type="wall" x="4582" y="6211" width="111" height="7"/>
-  <object id="364" name="Wall" type="wall" x="4356" y="5953" width="12" height="67"/>
-  <object id="365" name="Wall" type="wall" x="4348" y="6000" width="54" height="3"/>
-  <object id="366" name="Wall" type="wall" x="4803" y="5998" width="6" height="98"/>
-  <object id="367" name="Wall" type="wall" x="4784" y="6066" width="192" height="14"/>
-  <object id="368" name="Wall" type="wall" x="4941" y="6057" width="13" height="123"/>
-  <object id="369" name="Wall" type="wall" x="4626" y="6162" width="354" height="7"/>
-  <object id="370" name="Wall" type="wall" x="4957" y="6065" width="1" height="111"/>
-  <object id="371" name="Wall" type="wall" x="4388" y="5804" width="1" height="111"/>
-  <object id="372" name="Wall" type="wall" x="4615" y="5781" width="1" height="280"/>
-  <object id="373" name="Wall" type="wall" x="4509" y="5542" width="11" height="221"/>
-  <object id="374" name="Wall" type="wall" x="4506" y="5561" width="1" height="124"/>
-  <object id="375" name="Wall" type="wall" x="4457" y="5565" width="69" height="2"/>
-  <object id="376" name="Wall" type="wall" x="4349" y="5628" width="12" height="120"/>
-  <object id="377" name="Wall" type="wall" x="4329" y="5701" width="742" height="33"/>
-  <object id="378" name="Wall" type="wall" x="4336" y="5690" width="647" height="7"/>
+  <object id="353" name="Wall" type="wall" x="4709" y="6338" width="2" height="388">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="354" name="Wall" type="wall" x="4561" y="6365" width="198" height="9">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="355" name="Wall" type="wall" x="4596" y="6196" width="12" height="201">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="356" name="Wall" type="wall" x="4589" y="6316" width="151" height="2">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="357" name="Wall" type="wall" x="4720" y="6258" width="12" height="137">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="358" name="Wall" type="wall" x="4588" y="6268" width="186" height="9">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="359" name="Wall" type="wall" x="4639" y="6133" width="6" height="108">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="360" name="Wall" type="wall" x="4718" y="6101" width="6" height="108">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="361" name="Wall" type="wall" x="4634" y="6197" width="102" height="3">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="362" name="Wall" type="wall" x="4629" y="6140" width="172" height="3">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="363" name="Wall" type="wall" x="4582" y="6211" width="111" height="7">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="364" name="Wall" type="wall" x="4356" y="5953" width="12" height="67">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="365" name="Wall" type="wall" x="4348" y="6000" width="54" height="3">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="366" name="Wall" type="wall" x="4803" y="5998" width="6" height="98">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="367" name="Wall" type="wall" x="4784" y="6066" width="192" height="14">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="368" name="Wall" type="wall" x="4941" y="6057" width="13" height="123">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="369" name="Wall" type="wall" x="4626" y="6162" width="354" height="7">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="370" name="Wall" type="wall" x="4957" y="6065" width="1" height="111">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="371" name="Wall" type="wall" x="4388" y="5804" width="1" height="111">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="372" name="Wall" type="wall" x="4615" y="5781" width="1" height="280">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="373" name="Wall" type="wall" x="4509" y="5542" width="11" height="221">
+   <properties>
+    <property name="tag" value="colorSwich_walls"/>
+   </properties>
+  </object>
+  <object id="374" name="Wall" type="wall" x="4506" y="5561" width="1" height="124">
+   <properties>
+    <property name="tag" value="colorSwich_walls"/>
+   </properties>
+  </object>
+  <object id="375" name="Wall" type="wall" x="4457" y="5565" width="69" height="2">
+   <properties>
+    <property name="tag" value="colorSwich_walls"/>
+   </properties>
+  </object>
+  <object id="376" name="Wall" type="wall" x="4349" y="5628" width="12" height="120">
+   <properties>
+    <property name="tag" value="colorSwich_walls"/>
+   </properties>
+  </object>
+  <object id="377" name="Wall" type="wall" x="4329" y="5701" width="742" height="33">
+   <properties>
+    <property name="tag" value="colorSwich_walls"/>
+   </properties>
+  </object>
+  <object id="378" name="Wall" type="wall" x="4336" y="5690" width="647" height="7">
+   <properties>
+    <property name="tag" value="colorSwich_walls"/>
+   </properties>
+  </object>
   <object id="379" name="Wall" type="wall" x="4633" y="5183" width="11" height="270"/>
   <object id="380" name="Wall" type="wall" x="4269" y="5286" width="6" height="112"/>
   <object id="381" name="Wall" type="wall" x="4238" y="5334" width="907" height="7"/>
   <object id="382" name="Wall" type="wall" x="4591" y="5206" width="1914" height="86"/>
   <object id="383" name="Wall" type="wall" x="4991" y="5185" width="11" height="179"/>
-  <object id="384" name="Wall" type="wall" x="4878" y="6286" width="354" height="20"/>
-  <object id="385" name="Wall" type="wall" x="5220" y="6202" width="1" height="133"/>
-  <object id="386" name="Wall" type="wall" x="5204" y="6163" width="13" height="176"/>
-  <object id="387" name="Wall" type="wall" x="5050" y="6208" width="314" height="9"/>
-  <object id="388" name="Wall" type="wall" x="5087" y="6196" width="6" height="130"/>
-  <object id="389" name="Wall" type="wall" x="5269" y="5902" width="31" height="483"/>
-  <object id="390" name="Wall" type="wall" x="5165" y="5918" width="172" height="9"/>
-  <object id="391" name="Wall" type="wall" x="5252" y="5910" width="6" height="130"/>
-  <object id="392" name="Wall" type="wall" x="5190" y="5909" width="5" height="84"/>
-  <object id="393" name="Wall" type="wall" x="5181" y="5976" width="134" height="4"/>
-  <object id="394" name="Wall" type="wall" x="4831" y="5934" width="274" height="14"/>
-  <object id="395" name="Wall" type="wall" x="5065" y="5917" width="15" height="436"/>
-  <object id="396" name="Wall" type="wall" x="4923" y="5954" width="173" height="4"/>
+  <object id="384" name="Wall" type="wall" x="4878" y="6286" width="354" height="20">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="385" name="Wall" type="wall" x="5220" y="6202" width="1" height="133">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="386" name="Wall" type="wall" x="5204" y="6163" width="13" height="176">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="387" name="Wall" type="wall" x="5050" y="6208" width="314" height="9">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="388" name="Wall" type="wall" x="5087" y="6196" width="6" height="130">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="389" name="Wall" type="wall" x="5269" y="5902" width="31" height="483">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="390" name="Wall" type="wall" x="5165" y="5918" width="172" height="9">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="391" name="Wall" type="wall" x="5252" y="5910" width="6" height="130">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="392" name="Wall" type="wall" x="5190" y="5909" width="5" height="84">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="393" name="Wall" type="wall" x="5181" y="5976" width="134" height="4">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="394" name="Wall" type="wall" x="4831" y="5934" width="274" height="14">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="395" name="Wall" type="wall" x="5065" y="5917" width="15" height="436">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="396" name="Wall" type="wall" x="4923" y="5954" width="173" height="4">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
   <object id="397" name="Wall" type="wall" x="5304" y="5915" width="1" height="345"/>
-  <object id="398" name="Wall" type="wall" x="5062" y="5926" width="1" height="301"/>
-  <object id="399" name="Wall" type="wall" x="4842" y="5930" width="248" height="2"/>
-  <object id="400" name="Wall" type="wall" x="4939" y="5921" width="2" height="68"/>
-  <object id="401" name="Wall" type="wall" x="4957" y="5683" width="13" height="292"/>
-  <object id="402" name="Wall" type="wall" x="4839" y="5738" width="173" height="4"/>
-  <object id="403" name="Wall" type="wall" x="4864" y="5711" width="2" height="68"/>
+  <object id="398" name="Wall" type="wall" x="5062" y="5926" width="1" height="301">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="399" name="Wall" type="wall" x="4842" y="5930" width="248" height="2">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="400" name="Wall" type="wall" x="4939" y="5921" width="2" height="68">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="401" name="Wall" type="wall" x="4957" y="5683" width="13" height="292">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="402" name="Wall" type="wall" x="4839" y="5738" width="173" height="4">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="403" name="Wall" type="wall" x="4864" y="5711" width="2" height="68">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
   <object id="404" name="Wall" type="wall" x="5420" y="5441" width="48" height="1309"/>
   <object id="405" name="Wall" type="wall" x="5371" y="6430" width="314" height="9"/>
   <object id="406" name="Wall" type="wall" x="5485" y="6407" width="18" height="427"/>
@@ -439,8 +743,16 @@
   <object id="409" name="Wall" type="wall" x="5475" y="5987" width="13" height="292"/>
   <object id="410" name="Wall" type="wall" x="5404" y="6004" width="177" height="6"/>
   <object id="411" name="Wall" type="wall" x="5558" y="5995" width="1" height="345"/>
-  <object id="412" name="Wall" type="wall" x="4937" y="5750" width="321" height="14"/>
-  <object id="413" name="Wall" type="wall" x="5057" y="5696" width="5" height="84"/>
+  <object id="412" name="Wall" type="wall" x="4937" y="5750" width="321" height="14">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
+  <object id="413" name="Wall" type="wall" x="5057" y="5696" width="5" height="84">
+   <properties>
+    <property name="tag" value="colorSwitch_walls"/>
+   </properties>
+  </object>
   <object id="414" name="Wall" type="wall" x="5704" y="5909" width="18" height="427"/>
   <object id="415" name="Wall" type="wall" x="5632" y="6194" width="199" height="4"/>
   <object id="416" name="Wall" type="wall" x="5682" y="6165" width="8" height="130"/>
@@ -591,8 +903,15 @@
    </properties>
    <ellipse/>
   </object>
+  <object id="589" name="finalSwitch" type="switch" x="5153.81" y="7351.9" width="40" height="35.6"/>
+  <object id="591" name="Snatcher" type="snatcher" x="2471" y="6120" width="40" height="40">
+   <properties>
+    <property name="tag" value="linesSwitch_enemies"/>
+   </properties>
+   <ellipse/>
+  </object>
  </objectgroup>
- <objectgroup name="gates" visible="0">
+ <objectgroup name="gates">
   <object id="299" name="graphicsGate" type="gate" x="5010" y="7682" width="332" height="49">
    <properties>
     <property name="tag" value="graphicsGate"/>
@@ -614,7 +933,7 @@
    </properties>
   </object>
  </objectgroup>
- <objectgroup name="barriers" visible="0">
+ <objectgroup name="barriers">
   <object id="148" name="Barrier" type="barrier" x="3157" y="8179" width="711" height="1121"/>
   <object id="149" name="Barrier" type="barrier" x="3805" y="8447" width="515" height="862"/>
   <object id="155" name="Barrier" type="barrier" x="5693" y="7860" width="1385" height="656"/>
@@ -631,7 +950,7 @@
   <object id="495" name="Barrier" type="barrier" x="-99" y="2010" width="8683" height="1762"/>
   <object id="496" name="Barrier" type="barrier" x="-135" y="3664" width="1309" height="498"/>
  </objectgroup>
- <objectgroup name="lines" opacity="0.44">
+ <objectgroup name="lines" visible="0" opacity="0.44">
   <object id="127" x="4266.65" y="8397.31">
    <polyline points="0,0 -439.756,-374.936"/>
   </object>
@@ -681,7 +1000,7 @@
    <polyline points="0,0 -235,-431"/>
   </object>
   <object id="143" x="5239" y="8029">
-   <polyline points="0,0 -72,-694"/>
+   <polyline points="0,0 -71,-658"/>
   </object>
   <object id="144" x="5244" y="8040">
    <polyline points="0,0 114,-456"/>
@@ -895,9 +1214,6 @@
   </object>
   <object id="555" x="5699" y="6396">
    <polyline points="0,0 501,4"/>
-  </object>
-  <object id="557" x="5370" y="5843">
-   <polyline points="0,0 -327,0"/>
   </object>
   <object id="559" x="3900" y="5200">
    <polyline points="0,0 -2700,0"/>

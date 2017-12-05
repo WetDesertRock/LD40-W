@@ -60,8 +60,12 @@ function SnatcherAI:attack(this, other)
 			snd:setVolume(1)
 		end
 
-		other:enableComponent("followermovement")
-		other:enableComponent("playermovement")
+		if not other:getComponent("followermovement") then
+			other:enableComponent("followermovement")
+		end
+		if not other:getComponent("followermovement") then
+			other:enableComponent("playermovement")
+		end
 		self.tweens:to(thisCompo.position, 0.15, {x = originx, y = originy})
 	end)
 end

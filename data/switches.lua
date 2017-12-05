@@ -101,7 +101,73 @@ return {
 			sticky = false,
 			state = false
 		},
-		enable = function(self, switch) end,
-		disable = function(self, switch) end
+		enable = function(self, switch)
+			self.world:getSystem("colorrender"):enable()
+			self.world:getSystem("followerspawner"):setSpawnRange(300, 1000)
+			self.world:getBookmark("colorGate"):disableAllComponents()
+			self.world:disableTaggedEntities("colorSwitch_walls")
+		end,
+		disable = function(self, switch)
+			self.world:getSystem("colorrender"):disable()
+			self.world:getSystem("followerspawner"):setSpawnRange(750, 1000)
+			self.world:getBookmark("colorGate"):enableAllComponents()
+			self.world:enableTaggedEntities("colorSwitch_walls")
+		end
+	},
+	finalSwitch = {
+		data = {
+			id = "finalSwitch",
+			title = "-",
+			sticky = true,
+			state = false
+		},
+		enable = function(self, switch)
+			self.world:getSystem("faderender"):fadeOut(5)
+			self.world:getSystem("soundsystem"):fadeOut(8)
+
+
+			local player = self.world:getBookmark("player")
+			player:removeComponent("collision")
+			player:removeComponent("playermovement")
+
+			-- Add done text
+			local ent = self.world:addEntity(require("entities.text"))
+			ent:addComponent("position", Vector(0,200))
+			ent:addComponent("textrender", {
+				text = "M",
+				limit = love.graphics.getWidth(),
+				align = "center",
+				font = "Rounded_Elegance.ttf",
+				fontsize = 120
+			})
+			local ent = self.world:addEntity(require("entities.text"))
+			ent:addComponent("position", Vector(0,300))
+			ent:addComponent("textrender", {
+				text = "-",
+				limit = love.graphics.getWidth(),
+				align = "center",
+				font = "Rounded_Elegance.ttf",
+				fontsize = 72
+			})
+			local ent = self.world:addEntity(require("entities.text"))
+			ent:addComponent("position", Vector(0,350))
+			ent:addComponent("textrender", {
+				text = "end",
+				limit = love.graphics.getWidth(),
+				align = "center",
+				font = "Rounded_Elegance.ttf",
+				fontsize = 64
+			})
+			local ent = self.world:addEntity(require("entities.text"))
+			ent:addComponent("position", Vector(0,love.graphics.getHeight()-40))
+			ent:addComponent("textrender", {
+				text = "@wetdesertrock",
+				limit = love.graphics.getWidth()-20,
+				align = "right",
+				font = "Rounded_Elegance.ttf",
+				fontsize = 24
+			})
+		end,
+		disable = function(self, switch) end --sticky
 	},
 }

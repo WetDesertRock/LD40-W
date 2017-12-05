@@ -19,7 +19,7 @@ function Switch:execute(dt)
 			local composition = self:composeComponents(uuid, "position", "switch")
 
 			local dist = composition.position:distance(playercomp.position)
-			if dist < 20 then
+			if dist < 30 then
 				composition.entity:onSwitch()
 			end
 		end

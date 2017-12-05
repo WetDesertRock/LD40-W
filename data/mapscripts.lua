@@ -17,6 +17,8 @@ return {
 		--- Set initial states of systems
 		world:getSystem("linerender"):disable()
 		world:getSystem("soundsystem"):disable()
+		world:getSystem("colorrender"):disable()
+		world:enableTaggedEntities("colorSwitch_walls")
 	end,
 	loaders = {
 		player = function(world, object)
@@ -59,23 +61,38 @@ return {
 
 		wall = function(world, object)
 			local ent = world:addEntity(require("entities.wall"), object.center, object.rect)
+			if object.tag then
+				world:tagEntity(ent, object.tag)
+			end
 		end,
 
 		line = function(world, object)
 			local ent = world:addEntity(require("entities.line"), object.points)
+			if object.tag then
+				world:tagEntity(ent, object.tag)
+			end
 		end,
 
 		color = function(world, object)
 			local ent = world:addEntity(require("entities.color"), object.name, object.points)
+			if object.tag then
+				world:tagEntity(ent, object.tag)
+			end
 		end,
 
 		barrier = function(world, object)
 			local ent = world:addEntity(require("entities.barrier"), object.center, object.rect)
+			if object.tag then
+				world:tagEntity(ent, object.tag)
+			end
 		end,
 
 		gate = function(world, object)
 			local ent = world:addEntity(require("entities.gate"), object.rect, object.name)
 			world:addBookmark(object.name, ent)
+			if object.tag then
+				world:tagEntity(ent, object.tag)
+			end
 		end
 
 	}

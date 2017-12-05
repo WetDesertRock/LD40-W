@@ -52,8 +52,8 @@ function love.load()
 
 	mapLoader(world)
 
-	local src = Media:playSound("LD40_Ambient.ogg", 0.03)
-	src:setLooping(1)
+	-- local src = Media:playSound("LD40_Ambient.ogg", 0.03)
+	-- src:setLooping(1)
 end
 
 function love.update(dt)

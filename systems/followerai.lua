@@ -38,7 +38,7 @@ function FollowerAI:execute(dt)
 		end
 
 		-- Check if we cant sprint, if so, do it
-		if pdist < 600 and pdist > 100 and self.canSprint then
+		if pdist < 600 and pdist > 130 and self.canSprint then
 			-- Check the timing
 			if data.nextSprint <= 0 then
 				local basespeed = composition.movement.speed

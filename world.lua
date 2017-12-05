@@ -86,6 +86,16 @@ function World:enableTaggedEntities(tag)
 	end
 end
 
+function World:disableTaggedEntities(tag)
+	if self.tags[tag] == nil then
+		self.tags[tag] = {}
+	end
+
+	for _,ent in pairs(self.tags[tag]) do
+		ent:disableAllComponents()
+	end
+end
+
 
 function World:removeEntity(entity)
 	entity:removeAllComponents()

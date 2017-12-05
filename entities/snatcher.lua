@@ -21,7 +21,7 @@ function Snatcher:init(position)
 		phaseShift = love.math.random()
 	})
 	self:addComponent("soundsystem", {
-		volume = 0.5,
+		volume = 0.07,
 		file = "LD40_Snatcher.ogg",
 		maxdist = 100
 	})

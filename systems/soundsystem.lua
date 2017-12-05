@@ -8,7 +8,7 @@ function SoundSystem:init(...)
 	self.music:setLooping(1)
 	self.music:setVolume(0.2)
 	self.music:play()
-	love.audio.setDistanceModel("inverse")
+	love.audio.setDistanceModel("linear")
 end
 
 function SoundSystem:playSound(sound, position)
@@ -19,7 +19,7 @@ function SoundSystem:playSound(sound, position)
 	end
 	local source = Media:getSound(sound)
 	source:setRelative(false)
-	source:setAttenuationDistances( 16, 1000 )
+	source:setAttenuationDistances( 0, 1000 )
 	source:setPosition(position.x, position.y, 0)
 	source:play()
 
@@ -32,9 +32,9 @@ function SoundSystem:onAddComponent(entity, data)
 	local len = source:getDuration("samples")
 	source:seek(love.math.random(0, len)) -- Seek to a random point in the source
 	source:setLooping(1)
-	source:setVolume(1)--data.volume)
+	source:setVolume(data.volume)
 	source:setRelative(false)
-	source:setAttenuationDistances( 4, 100 )
+	source:setAttenuationDistances( 0, 550 )
 	if position then
 		source:setPosition(position.x, position.y, 0)
 	end
@@ -85,6 +85,15 @@ function SoundSystem:disable()
 		end
 	end
 	self.music:pause()
+end
+
+function SoundSystem:fadeOut(fadelength)
+	local volume = {volume=1}
+	self.tweens:to(volume, fadelength, {volume = 0}):onupdate(function()
+		love.audio.setVolume(volume.volume)
+	end):oncomplete(function()
+		self:disable()
+	end)
 end
 
 function SoundSystem:execute(dt)

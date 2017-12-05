@@ -8,7 +8,7 @@ return {
   height = 100,
   tilewidth = 100,
   tileheight = 100,
-  nextobjectid = 589,
+  nextobjectid = 592,
   properties = {},
   tilesets = {},
   layers = {
@@ -2031,8 +2031,8 @@ return {
           name = "Follower",
           type = "follower",
           shape = "ellipse",
-          x = 2310,
-          y = 6260,
+          x = 2512,
+          y = 6321,
           width = 46.1774,
           height = 46.1774,
           rotation = 0,
@@ -2079,8 +2079,8 @@ return {
           name = "Follower",
           type = "follower",
           shape = "ellipse",
-          x = 2268,
-          y = 6212,
+          x = 2505,
+          y = 6376,
           width = 46.1774,
           height = 46.1774,
           rotation = 0,
@@ -2095,8 +2095,8 @@ return {
           name = "Follower",
           type = "follower",
           shape = "ellipse",
-          x = 2241,
-          y = 6290,
+          x = 2426,
+          y = 6370,
           width = 46.1774,
           height = 46.1774,
           rotation = 0,
@@ -2202,7 +2202,9 @@ return {
           height = 20,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 310,
@@ -2215,7 +2217,9 @@ return {
           height = 779,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 311,
@@ -2228,7 +2232,9 @@ return {
           height = 20,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 312,
@@ -2241,7 +2247,9 @@ return {
           height = 221,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 313,
@@ -2254,7 +2262,9 @@ return {
           height = 7,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 314,
@@ -2280,7 +2290,9 @@ return {
           height = 16,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwich_walls"
+          }
         },
         {
           id = 316,
@@ -2293,7 +2305,9 @@ return {
           height = 420,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 326,
@@ -2306,7 +2320,9 @@ return {
           height = 398,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 327,
@@ -2319,7 +2335,9 @@ return {
           height = 20,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 328,
@@ -2332,7 +2350,9 @@ return {
           height = 3,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 329,
@@ -2345,7 +2365,9 @@ return {
           height = 70,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 330,
@@ -2358,7 +2380,9 @@ return {
           height = 74,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 331,
@@ -2371,7 +2395,9 @@ return {
           height = 20,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 332,
@@ -2384,7 +2410,9 @@ return {
           height = 1,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 333,
@@ -2397,7 +2425,9 @@ return {
           height = 267,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 334,
@@ -2410,7 +2440,9 @@ return {
           height = 9,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 335,
@@ -2423,7 +2455,9 @@ return {
           height = 64,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 336,
@@ -2436,7 +2470,9 @@ return {
           height = 20,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 337,
@@ -2449,7 +2485,9 @@ return {
           height = 130,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 338,
@@ -2462,7 +2500,9 @@ return {
           height = 199,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 339,
@@ -2475,7 +2515,9 @@ return {
           height = 7,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 340,
@@ -2488,7 +2530,9 @@ return {
           height = 129,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 341,
@@ -2501,7 +2545,9 @@ return {
           height = 3,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 342,
@@ -2514,7 +2560,9 @@ return {
           height = 3,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 343,
@@ -2527,7 +2575,9 @@ return {
           height = 319,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 344,
@@ -2540,7 +2590,9 @@ return {
           height = 129,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 345,
@@ -2553,7 +2605,9 @@ return {
           height = 6,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 346,
@@ -2566,7 +2620,9 @@ return {
           height = 206,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 347,
@@ -2579,7 +2635,9 @@ return {
           height = 3,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 348,
@@ -2592,7 +2650,9 @@ return {
           height = 2,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 349,
@@ -2605,7 +2665,9 @@ return {
           height = 442,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 350,
@@ -2657,7 +2719,9 @@ return {
           height = 388,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 354,
@@ -2670,7 +2734,9 @@ return {
           height = 9,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 355,
@@ -2683,7 +2749,9 @@ return {
           height = 201,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 356,
@@ -2696,7 +2764,9 @@ return {
           height = 2,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 357,
@@ -2709,7 +2779,9 @@ return {
           height = 137,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 358,
@@ -2722,7 +2794,9 @@ return {
           height = 9,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 359,
@@ -2735,7 +2809,9 @@ return {
           height = 108,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 360,
@@ -2748,7 +2824,9 @@ return {
           height = 108,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 361,
@@ -2761,7 +2839,9 @@ return {
           height = 3,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 362,
@@ -2774,7 +2854,9 @@ return {
           height = 3,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 363,
@@ -2787,7 +2869,9 @@ return {
           height = 7,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 364,
@@ -2800,7 +2884,9 @@ return {
           height = 67,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 365,
@@ -2813,7 +2899,9 @@ return {
           height = 3,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 366,
@@ -2826,7 +2914,9 @@ return {
           height = 98,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 367,
@@ -2839,7 +2929,9 @@ return {
           height = 14,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 368,
@@ -2852,7 +2944,9 @@ return {
           height = 123,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 369,
@@ -2865,7 +2959,9 @@ return {
           height = 7,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 370,
@@ -2878,7 +2974,9 @@ return {
           height = 111,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 371,
@@ -2891,7 +2989,9 @@ return {
           height = 111,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 372,
@@ -2904,7 +3004,9 @@ return {
           height = 280,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 373,
@@ -2917,7 +3019,9 @@ return {
           height = 221,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwich_walls"
+          }
         },
         {
           id = 374,
@@ -2930,7 +3034,9 @@ return {
           height = 124,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwich_walls"
+          }
         },
         {
           id = 375,
@@ -2943,7 +3049,9 @@ return {
           height = 2,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwich_walls"
+          }
         },
         {
           id = 376,
@@ -2956,7 +3064,9 @@ return {
           height = 120,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwich_walls"
+          }
         },
         {
           id = 377,
@@ -2969,7 +3079,9 @@ return {
           height = 33,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwich_walls"
+          }
         },
         {
           id = 378,
@@ -2982,7 +3094,9 @@ return {
           height = 7,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwich_walls"
+          }
         },
         {
           id = 379,
@@ -3060,7 +3174,9 @@ return {
           height = 20,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 385,
@@ -3073,7 +3189,9 @@ return {
           height = 133,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 386,
@@ -3086,7 +3204,9 @@ return {
           height = 176,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 387,
@@ -3099,7 +3219,9 @@ return {
           height = 9,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 388,
@@ -3112,7 +3234,9 @@ return {
           height = 130,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 389,
@@ -3125,7 +3249,9 @@ return {
           height = 483,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 390,
@@ -3138,7 +3264,9 @@ return {
           height = 9,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 391,
@@ -3151,7 +3279,9 @@ return {
           height = 130,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 392,
@@ -3164,7 +3294,9 @@ return {
           height = 84,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 393,
@@ -3177,7 +3309,9 @@ return {
           height = 4,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 394,
@@ -3190,7 +3324,9 @@ return {
           height = 14,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 395,
@@ -3203,7 +3339,9 @@ return {
           height = 436,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 396,
@@ -3216,7 +3354,9 @@ return {
           height = 4,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 397,
@@ -3242,7 +3382,9 @@ return {
           height = 301,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 399,
@@ -3255,7 +3397,9 @@ return {
           height = 2,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 400,
@@ -3268,7 +3412,9 @@ return {
           height = 68,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 401,
@@ -3281,7 +3427,9 @@ return {
           height = 292,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 402,
@@ -3294,7 +3442,9 @@ return {
           height = 4,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 403,
@@ -3307,7 +3457,9 @@ return {
           height = 68,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 404,
@@ -3424,7 +3576,9 @@ return {
           height = 14,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 413,
@@ -3437,7 +3591,9 @@ return {
           height = 84,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tag"] = "colorSwitch_walls"
+          }
         },
         {
           id = 414,
@@ -4606,13 +4762,41 @@ return {
           properties = {
             ["tag"] = "linesSwitch_enemies"
           }
+        },
+        {
+          id = 589,
+          name = "finalSwitch",
+          type = "switch",
+          shape = "rectangle",
+          x = 5153.81,
+          y = 7351.9,
+          width = 40,
+          height = 35.6,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 591,
+          name = "Snatcher",
+          type = "snatcher",
+          shape = "ellipse",
+          x = 2471,
+          y = 6120,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["tag"] = "linesSwitch_enemies"
+          }
         }
       }
     },
     {
       type = "objectgroup",
       name = "gates",
-      visible = false,
+      visible = true,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -4684,7 +4868,7 @@ return {
     {
       type = "objectgroup",
       name = "barriers",
-      visible = false,
+      visible = true,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -4891,7 +5075,7 @@ return {
     {
       type = "objectgroup",
       name = "lines",
-      visible = true,
+      visible = false,
       opacity = 0.44,
       offsetx = 0,
       offsety = 0,
@@ -5183,7 +5367,7 @@ return {
           visible = true,
           polyline = {
             { x = 0, y = 0 },
-            { x = -72, y = -694 }
+            { x = -71, y = -658 }
           },
           properties = {}
         },
@@ -6404,23 +6588,6 @@ return {
           polyline = {
             { x = 0, y = 0 },
             { x = 501, y = 4 }
-          },
-          properties = {}
-        },
-        {
-          id = 557,
-          name = "",
-          type = "",
-          shape = "polyline",
-          x = 5370,
-          y = 5843,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          polyline = {
-            { x = 0, y = 0 },
-            { x = -327, y = 0 }
           },
           properties = {}
         },

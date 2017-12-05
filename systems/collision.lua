@@ -11,8 +11,8 @@ end
 
 function Collision:onAddComponent(entity, data)
 	-- Shift to non-center based position
-	data.position = data.position - (Vector(data.width, data.height) / 2 )
-	self.bump:add(entity.uuid, data.position.x, data.position.y, data.width, data.height)
+	local position = data.position - (Vector(data.width, data.height) / 2 )
+	self.bump:add(entity.uuid, position.x, position.y, data.width, data.height)
 end
 
 function Collision:onRemoveComponent(entity, data)
@@ -60,7 +60,7 @@ function Collision:moveComponent(entity, newPosition)
 		table.insert(self.pendingCollisions, col)
 	end
 
-	data.position.x, data.position.y = actualX, actualY
+	data.position = Vector(actualX, actualY) + (Vector(data.width, data.height) / 2 )
 
 	return Vector(actualX, actualY) + (Vector(data.width, data.height) / 2 )
 end
