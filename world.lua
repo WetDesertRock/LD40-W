@@ -88,6 +88,7 @@ end
 
 
 function World:removeEntity(entity)
+	print("Removing entity", entity.uuid)
 	entity:removeAllComponents()
 	self.entities[entity.uuid] = nil
 	entity:onRemove()

@@ -44,6 +44,7 @@ function love.load()
 		"debugrender",
 		"linerender",
 		"barrierrender",
+		"gaterender",
 		"soundsystem",
 		"camera"
 	)
@@ -75,6 +76,7 @@ function love.draw()
 	world:executeSystems(
 		"barrierrender",
 		"linerender",
+		"gaterender",
 		"wallrender",
 		"switchrender",
 		"followerrender",

@@ -8,7 +8,7 @@ function SoundSystem:init(...)
 	self.music:setLooping(1)
 	self.music:setVolume(0.2)
 	self.music:play()
-	love.audio.setDistanceModel("exponent")
+	love.audio.setDistanceModel("inverse")
 end
 
 function SoundSystem:playSound(sound, position)

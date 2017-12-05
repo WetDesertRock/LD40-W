@@ -37,6 +37,12 @@ return {
 
 		follower = function(world, object)
 			local ent = world:addEntity(require("entities.follower"), object.center)
+
+			if object.raw.properties.special == "sprinter" then
+				local followerai = ent:getComponent("followerai")
+				followerai.nextSprint = 0.5
+			end
+
 			if object.tag then
 				ent:disableAllComponents()
 				world:tagEntity(ent, object.tag)
@@ -61,6 +67,11 @@ return {
 
 		barrier = function(world, object)
 			local ent = world:addEntity(require("entities.barrier"), object.center, object.rect)
+		end,
+
+		gate = function(world, object)
+			local ent = world:addEntity(require("entities.gate"), object.rect, object.name)
+			world:addBookmark(object.name, ent)
 		end
 
 	}

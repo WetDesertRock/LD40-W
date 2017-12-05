@@ -1,6 +1,6 @@
-local Wall = require("entity"):extend()
+local Barrier = require("entity"):extend()
 
-function Wall:init(center, rect)
+function Barrier:init(center, rect)
 	self:addComponent("rectangle", rect:clone())
 	self:addComponent("collision", {
 		position = center:clone(),
@@ -12,4 +12,4 @@ function Wall:init(center, rect)
 	self:addComponent("barrierrender", {})
 end
 
-return Wall
+return Barrier

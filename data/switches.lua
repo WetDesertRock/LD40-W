@@ -26,9 +26,13 @@ return {
 				self.world:enableTaggedEntities("graphicsSwitch_followers")
 				self.world:getSystem("followerspawner"):spawn(20)
 			end
+
+			self.world:getBookmark("graphicsGate"):disableAllComponents()
 		end,
 
-		disable = function(self, switch) end -- Sticky switch
+		disable = function(self, switch)
+			self.world:getBookmark("graphicsGate"):enableAllComponents()
+		end
 	},
 	linesSwitch = {
 		data = {
@@ -49,10 +53,12 @@ return {
 				self.world:getSystem("followerspawner"):spawn(5)
 			end
 			self.world:getSystem("linerender"):enable()
+			self.world:getBookmark("linesGate"):disableAllComponents()
 		end,
 
 		disable = function(self, switch)
 			self.world:getSystem("linerender"):disable()
+			self.world:getBookmark("linesGate"):enableAllComponents()
 		end
 	},
 	soundSwitch = {
@@ -63,10 +69,19 @@ return {
 			state = false
 		},
 		enable = function(self, switch)
+			if not switch.triggered then
+				-- Enable demo of sprinting:
+				self.world:enableTaggedEntities("soundSwitch_enemies")
+			end
+
 			self.world:getSystem("soundsystem"):enable()
+			self.world:getSystem("followerai"):setSprintable(true)
+			self.world:getBookmark("soundGate"):disableAllComponents()
 		end,
 		disable = function(self, switch)
 			self.world:getSystem("soundsystem"):disable()
+			self.world:getSystem("followerai"):setSprintable(false)
+			self.world:getBookmark("soundGate"):enableAllComponents()
 		end
 	},
 	pathingSwitch = {

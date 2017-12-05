@@ -13,6 +13,10 @@ end
 function System:composeComponents(uuid, ...)
 	local entity = self.world:getEntity(uuid)
 
+	if entity == nil then
+		error("Oh no! Entity isn't found: "..uuid)
+	end
+
 	return entity:composeComponents(...)
 end
 
