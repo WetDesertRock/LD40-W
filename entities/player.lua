@@ -3,7 +3,7 @@ local Player = require("entity"):extend()
 function Player:init(position)
 	self:addComponent("position", position:clone())
 	self:addComponent("movement", {
-		speed = 270
+		speed = 300
 	})
 	self:addComponent("playerrender", {})
 

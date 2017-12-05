@@ -31,6 +31,16 @@ local function loadMap(world)
 					obj.points = points
 				end
 
+				if object.shape == "polygon" then
+					obj.type = "color"
+					local points = {}
+					for _,pt in ipairs(object.polygon) do
+						local npt = Vector(pt.x,pt.y) + center
+						table.insert(points, npt)
+					end
+					obj.points = points
+				end
+
 				table.insert(mapObjects, obj)
 			end
 		end

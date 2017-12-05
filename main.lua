@@ -44,6 +44,7 @@ function love.load()
 		"debugrender",
 		"linerender",
 		"barrierrender",
+		"colorrender",
 		"gaterender",
 		"soundsystem",
 		"camera"
@@ -74,6 +75,7 @@ end
 function love.draw()
 	love.graphics.setBackgroundColor(240, 240, 240)
 	world:executeSystems(
+		"colorrender",
 		"barrierrender",
 		"linerender",
 		"gaterender",

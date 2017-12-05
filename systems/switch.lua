@@ -13,7 +13,7 @@ function Switch:execute(dt)
 	local input = self.world:getSystem("input"):getInput()
 
 	-- If the switch button has been pressed
-	if input:released("switch") then
+	if input:pressed("switch") then
 		for uuid, data in pairs(self.components) do
 			-- Check distance, if it is within a good range fire the switch
 			local composition = self:composeComponents(uuid, "position", "switch")

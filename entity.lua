@@ -55,6 +55,9 @@ function Entity:removeAllComponents()
 	for name,data in pairs(self.components) do
 		self:removeComponent(name)
 	end
+	for name,data in pairs(self.disabledComponents) do
+		self:removeComponent(name)
+	end
 end
 
 function Entity:onRemove()

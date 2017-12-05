@@ -4,7 +4,7 @@ local Follower = require("entity"):extend()
 function Follower:init(position)
 	self:addComponent("position", position:clone())
 	self:addComponent("movement", {
-		speed = 100 + love.math.random(-10,10),
+		speed = 200 + love.math.random(-10,10),
 		direction = 0
 	})
 	self:addComponent("followermovement", {})

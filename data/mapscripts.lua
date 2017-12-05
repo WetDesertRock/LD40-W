@@ -65,6 +65,10 @@ return {
 			local ent = world:addEntity(require("entities.line"), object.points)
 		end,
 
+		color = function(world, object)
+			local ent = world:addEntity(require("entities.color"), object.name, object.points)
+		end,
+
 		barrier = function(world, object)
 			local ent = world:addEntity(require("entities.barrier"), object.center, object.rect)
 		end,

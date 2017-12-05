@@ -7,5 +7,8 @@ return {
 	},
 	soundGate = {
 		title = "S"
+	},
+	colorGate = {
+		title = "C"
 	}
 }
