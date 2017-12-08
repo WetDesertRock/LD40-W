@@ -1,7 +1,7 @@
 local mapscripts = require("data.mapscripts")
 
 local function loadMap(world)
-	local map = dofile("assets/maps/main.lua")
+	local map = require("assets.maps.main")
 
 	local mapObjects = {}
 

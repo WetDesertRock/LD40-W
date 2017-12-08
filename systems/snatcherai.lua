@@ -63,7 +63,7 @@ function SnatcherAI:attack(this, other)
 		if not other:getComponent("followermovement") then
 			other:enableComponent("followermovement")
 		end
-		if not other:getComponent("followermovement") then
+		if not other:getComponent("playermovement") then
 			other:enableComponent("playermovement")
 		end
 		self.tweens:to(thisCompo.position, 0.15, {x = originx, y = originy})

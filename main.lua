@@ -17,6 +17,8 @@ require("lib.globalwatch")
 local world = require("world")()
 local mapLoader = require("maploader")
 
+local paused = false
+
 function love.load()
 	Media:preloadSounds()
 	Media:preloadImages()
@@ -56,7 +58,14 @@ function love.load()
 	-- src:setLooping(1)
 end
 
+function love.keypressed(key)
+	if key == "p" then
+		paused = not paused
+	end
+end
+
 function love.update(dt)
+	if paused then return end
 	world:executeSystems(
 		"input",
 		"playermovement",
