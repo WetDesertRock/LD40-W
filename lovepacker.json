@@ -1,0 +1,7 @@
+{
+	"buildpath": "build",
+	"processors": ["luac"],
+	"loveversion": "0.10.2",
+	"gamename": "M",
+	"identifier": "com.wetdesertrock.m_game"
+}
